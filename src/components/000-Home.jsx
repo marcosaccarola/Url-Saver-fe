@@ -36,9 +36,9 @@ const Home=()=>{
 
     return(
         <>
-            <Bar />
+            <Bar user={user} />
             <ControlsAbove />
-            <Central />
+            <Central user={user} />
             <ControlsBelow />
         </>
     )

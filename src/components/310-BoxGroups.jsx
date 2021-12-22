@@ -1,6 +1,6 @@
 import './000.css'
 
-const BoxGroups=()=>{
+const BoxGroups=({user})=>{
 
     return(
         <></>

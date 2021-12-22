@@ -1,6 +1,6 @@
 import './000.css'
 
-const BoxUrls=()=>{
+const BoxUrls=({user})=>{
 
     return(
         <></>

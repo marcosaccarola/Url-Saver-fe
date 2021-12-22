@@ -1,10 +1,10 @@
 import './000.css'
 
-const BoxDetails=()=>{
+const BoxDetails=({user})=>{
 
     return(
         <>
-            
+
         </>
     )
 }
