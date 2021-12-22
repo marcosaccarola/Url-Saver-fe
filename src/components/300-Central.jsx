@@ -9,9 +9,9 @@ const Central=()=>{
     return(
         <>
             <Row className='central vw-100'>
-                <Col sm={2} className='wings'>                    
+                <Col sm={1} className='wings'>                    
                 </Col>
-                <Col sm={8} className='row text-black'>
+                <Col sm={10} className='row text-black'>
                     <Col sm={6} className='box-groups'>
                         <BoxGroups />
                     </Col>
@@ -24,7 +24,7 @@ const Central=()=>{
                         </Row>     
                     </Col>                    
                 </Col>
-                <Col sm={2} className='wings'>
+                <Col sm={1} className='wings'>
                 </Col>
             </Row>
         </>

@@ -6,10 +6,10 @@ const ControlsAbove=()=>{
     return(
         <>
             <Row className='controls-below vw-100'>
-                <Col sm={2}>
+                <Col sm={1}>
                     
                 </Col>
-                <Col sm={8} className='row'>
+                <Col sm={10} className='row align-items-center'>
                     <Col sm={6}>
                         groups
                     </Col>
@@ -17,7 +17,7 @@ const ControlsAbove=()=>{
                         details
                     </Col>
                 </Col>
-                <Col sm={2}>
+                <Col sm={1}>
                     
                 </Col>
             </Row>

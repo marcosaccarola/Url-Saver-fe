@@ -5,7 +5,7 @@ const Bar=()=>{
 
     return(
         <>
-            <Row className='bar vw-100'>
+            <Row className='bar vw-100 align-items-center'>
                 <Col sm={2}>
                     logo
                 </Col>
