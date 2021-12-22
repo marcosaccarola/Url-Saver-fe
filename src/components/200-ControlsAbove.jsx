@@ -10,13 +10,10 @@ const ControlsAbove=()=>{
                     
                 </Col>
                 <Col sm={8} className='row'>
-                    <Col sm={5}>
+                    <Col sm={6}>
                         groups
                     </Col>
-                    <Col sm={2}>
-                        ?
-                    </Col>
-                    <Col sm={5}>
+                    <Col sm={6}>
                         details
                     </Col>
                 </Col>

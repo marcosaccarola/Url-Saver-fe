@@ -9,13 +9,24 @@
   height: 8vh;
 }
 
+.wings {
+  background: grey;
+}
+
 .central {
   background: honeydew;
   height: 76vh;
 }
-
-.wings {
-  background: grey;
+.box-groups {
+  background: yellowgreen;
+}
+.box-details {
+  background: turquoise;
+  height: 38vh;
+}
+.box-urls {
+  background: red;
+  height: 38vh;
 }
 
 .controls-below {
