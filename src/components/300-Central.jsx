@@ -6,14 +6,14 @@ const Central=()=>{
     return(
         <>
             <Row className='central vw-100'>
-                <Col sm={2}>
-                    logo
+                <Col sm={2} className='wings'>
+                    
                 </Col>
-                <Col sm={8}>
-                    home button
+                <Col sm={8} className='text-black'>
+                    
                 </Col>
-                <Col sm={2}>
-                    avatar
+                <Col sm={2} className='wings'>
+                    
                 </Col>
             </Row>
         </>

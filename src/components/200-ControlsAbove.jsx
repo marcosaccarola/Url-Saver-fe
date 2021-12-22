@@ -5,15 +5,23 @@ const ControlsAbove=()=>{
 
     return(
         <>
-            <Row className='controls-above vw-100'>
+            <Row className='controls-below vw-100'>
                 <Col sm={2}>
-                    logo
+                    
                 </Col>
-                <Col sm={8}>
-                    home button
+                <Col sm={8} className='row'>
+                    <Col sm={5}>
+                        groups
+                    </Col>
+                    <Col sm={2}>
+                        ?
+                    </Col>
+                    <Col sm={5}>
+                        details
+                    </Col>
                 </Col>
                 <Col sm={2}>
-                    avatar
+                    
                 </Col>
             </Row>
         </>

@@ -7,13 +7,18 @@ const ControlsBelow=()=>{
         <>
             <Row className='controls-below vw-100'>
                 <Col sm={2}>
-                    logo
+                    
                 </Col>
-                <Col sm={8}>
-                    home button
+                <Col sm={8} className='row'>
+                    <Col sm={6}>
+                        
+                    </Col>
+                    <Col sm={6}>
+                        urls
+                    </Col>
                 </Col>
                 <Col sm={2}>
-                    avatar
+                    
                 </Col>
             </Row>
         </>

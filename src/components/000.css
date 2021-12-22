@@ -1,20 +1,24 @@
 .bar {
   background: tomato;
   color: #000000;
-  height: 10vh;
+  height: 8vh;
 }
 
 .controls-above {
   background: grey;
-  height: 10vh;
+  height: 8vh;
 }
 
 .central {
   background: honeydew;
-  height: 70vh;
+  height: 76vh;
+}
+
+.wings {
+  background: grey;
 }
 
 .controls-below {
   background: grey;
-  height: 10vh;
+  height: 8vh;
 }

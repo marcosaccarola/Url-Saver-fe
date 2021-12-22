@@ -10,7 +10,7 @@ const Bar=()=>{
                     logo
                 </Col>
                 <Col sm={8}>
-                    home button
+                    home
                 </Col>
                 <Col sm={2}>
                     avatar
