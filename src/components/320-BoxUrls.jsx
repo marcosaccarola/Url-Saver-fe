@@ -8,7 +8,7 @@ const BoxUrls=({selectedGroup})=>{
             {selectedGroup&&selectedGroup.urls.map(u=>
                 <Row>
                     <Col sm={12} className='text-start'>
-                        <span className='container border border-info'>{u.urlName}</span>
+                        <span className='container border border-info' onClick={()=>window.open(u.urlString, '_blank')}>{u.urlName}</span>
                     </Col>
                 </Row>
             )}

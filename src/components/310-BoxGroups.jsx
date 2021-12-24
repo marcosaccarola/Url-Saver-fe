@@ -6,9 +6,9 @@ const BoxGroups=({user,setSelectedGroup})=>{
     return(
         <div className='mx-3 my-3 bg-dark text-light '>
             {user&&user.groups.map(g=>
-                <Row>
+                <Row key={g._id}>
                     <Col sm={12} className='text-start'>
-                        <span className='container border border-info'>{g.groupName}</span>
+                        <span className='container border border-info' onClick={()=>setSelectedGroup(g)}>{g.groupName}</span>
                     </Col>
                 </Row>
             )}

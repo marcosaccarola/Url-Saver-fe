@@ -27,6 +27,20 @@ const Home=()=>{
                             "urlNumber":1,
                             "urlDetailsTitle":"Gmail",
                             "urlDetails":"Developer email"
+                        },
+                        {
+                            "urlName":"google",
+                            "urlString":"https://www.google.it/",
+                            "urlNumber":1,
+                            "urlDetailsTitle":"Gmail",
+                            "urlDetails":"Developer email"
+                        },
+                        {
+                            "urlName":"Ansa",
+                            "urlString":"https://www.ansa.it/",
+                            "urlNumber":1,
+                            "urlDetailsTitle":"Gmail",
+                            "urlDetails":"Developer email"
                         }
                     ]
                 }
