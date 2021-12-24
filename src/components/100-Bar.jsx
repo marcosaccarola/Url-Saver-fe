@@ -1,7 +1,7 @@
 import { Col, Row } from 'react-bootstrap'
 import './000.css'
 
-const Bar=({user})=>{
+const Bar=({user,setUser})=>{
 
     return(
         <>

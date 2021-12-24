@@ -36,7 +36,7 @@ const Home=()=>{
 
     return(
         <>
-            <Bar user={user} />
+            <Bar user={user} setUser={setUser} />
             <ControlsAbove />
             <Central user={user} />
             <ControlsBelow />

@@ -20,13 +20,8 @@
 .box-groups {
   background: yellowgreen;
 }
-.box-details {
-  background: turquoise;
-  height: 38vh;
-}
 .box-urls {
   background: red;
-  height: 38vh;
 }
 
 .controls-below {
