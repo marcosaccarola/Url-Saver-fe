@@ -4,7 +4,12 @@ import './000.css'
 const BoxUrls=({selectedGroup})=>{
 
     return(
-        <div className='mx-3 my-3 bg-dark text-light '>
+        <div className='mx-3 my-3 bg-dark text-light'>
+                <Row>
+                    <Col sm={12} className='text-start'>
+                        <span className='container border border-info text-info'>add url</span>
+                    </Col>
+                </Row>
             {selectedGroup&&selectedGroup.urls.map(u=>
                 <Row>
                     <Col sm={12} className='text-start'>

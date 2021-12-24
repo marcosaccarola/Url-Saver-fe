@@ -23,6 +23,11 @@
 .box-urls {
   background: red;
 }
+.overY {
+  overflow-y: scroll !important;
+  overflow-x: hidden;
+  max-height: 76vh;
+}
 
 .controls-below {
   background: grey;

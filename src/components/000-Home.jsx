@@ -41,7 +41,112 @@ const Home=()=>{
                             "urlNumber":1,
                             "urlDetailsTitle":"Gmail",
                             "urlDetails":"Developer email"
-                        }
+                        },
+                        {
+                            "urlName":"marco.saccarola.dev@gmail.com",
+                            "urlString":"https://mail.google.com/mail/u/1/#inbox",
+                            "urlNumber":1,
+                            "urlDetailsTitle":"Gmail",
+                            "urlDetails":"Developer email"
+                        },
+                        {
+                            "urlName":"google",
+                            "urlString":"https://www.google.it/",
+                            "urlNumber":1,
+                            "urlDetailsTitle":"Gmail",
+                            "urlDetails":"Developer email"
+                        },
+                        {
+                            "urlName":"Ansa",
+                            "urlString":"https://www.ansa.it/",
+                            "urlNumber":1,
+                            "urlDetailsTitle":"Gmail",
+                            "urlDetails":"Developer email"
+                        },
+                        {
+                            "urlName":"marco.saccarola.dev@gmail.com",
+                            "urlString":"https://mail.google.com/mail/u/1/#inbox",
+                            "urlNumber":1,
+                            "urlDetailsTitle":"Gmail",
+                            "urlDetails":"Developer email"
+                        },
+                        {
+                            "urlName":"google",
+                            "urlString":"https://www.google.it/",
+                            "urlNumber":1,
+                            "urlDetailsTitle":"Gmail",
+                            "urlDetails":"Developer email"
+                        },
+                        {
+                            "urlName":"Ansa",
+                            "urlString":"https://www.ansa.it/",
+                            "urlNumber":1,
+                            "urlDetailsTitle":"Gmail",
+                            "urlDetails":"Developer email"
+                        },
+                        {
+                            "urlName":"marco.saccarola.dev@gmail.com",
+                            "urlString":"https://mail.google.com/mail/u/1/#inbox",
+                            "urlNumber":1,
+                            "urlDetailsTitle":"Gmail",
+                            "urlDetails":"Developer email"
+                        },
+                        {
+                            "urlName":"google",
+                            "urlString":"https://www.google.it/",
+                            "urlNumber":1,
+                            "urlDetailsTitle":"Gmail",
+                            "urlDetails":"Developer email"
+                        },
+                        {
+                            "urlName":"Ansa",
+                            "urlString":"https://www.ansa.it/",
+                            "urlNumber":1,
+                            "urlDetailsTitle":"Gmail",
+                            "urlDetails":"Developer email"
+                        },
+                        {
+                            "urlName":"marco.saccarola.dev@gmail.com",
+                            "urlString":"https://mail.google.com/mail/u/1/#inbox",
+                            "urlNumber":1,
+                            "urlDetailsTitle":"Gmail",
+                            "urlDetails":"Developer email"
+                        },
+                        {
+                            "urlName":"google",
+                            "urlString":"https://www.google.it/",
+                            "urlNumber":1,
+                            "urlDetailsTitle":"Gmail",
+                            "urlDetails":"Developer email"
+                        },
+                        {
+                            "urlName":"Ansa",
+                            "urlString":"https://www.ansa.it/",
+                            "urlNumber":1,
+                            "urlDetailsTitle":"Gmail",
+                            "urlDetails":"Developer email"
+                        },
+                        {
+                            "urlName":"marco.saccarola.dev@gmail.com",
+                            "urlString":"https://mail.google.com/mail/u/1/#inbox",
+                            "urlNumber":1,
+                            "urlDetailsTitle":"Gmail",
+                            "urlDetails":"Developer email"
+                        },
+                        {
+                            "urlName":"google",
+                            "urlString":"https://www.google.it/",
+                            "urlNumber":1,
+                            "urlDetailsTitle":"Gmail",
+                            "urlDetails":"Developer email"
+                        },
+                        {
+                            "urlName":"Ansa",
+                            "urlString":"https://www.ansa.it/",
+                            "urlNumber":1,
+                            "urlDetailsTitle":"Gmail",
+                            "urlDetails":"Developer email"
+                        },
                     ]
                 }
             ]

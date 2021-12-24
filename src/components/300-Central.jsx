@@ -15,10 +15,10 @@ const Central=({user})=>{
                 </Col>
 
                 <Col sm={10} className='row text-black'>
-                    <Col sm={6} className='box-groups'>
+                    <Col sm={6} className='box-groups overY'>
                         <BoxGroups user={user} setSelectedGroup={setSelectedGroup} />
                     </Col>
-                    <Col sm={6} className='box-urls'>
+                    <Col sm={6} className='box-urls overY'>
                         <BoxUrls selectedGroup={selectedGroup} />
                     </Col>                    
                 </Col>
