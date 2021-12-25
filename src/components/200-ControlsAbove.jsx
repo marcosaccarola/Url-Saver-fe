@@ -14,7 +14,7 @@ const ControlsAbove=()=>{
                         groups
                     </Col>
                     <Col sm={6}>
-                        details
+                        urls
                     </Col>
                 </Col>
                 <Col sm={1}>

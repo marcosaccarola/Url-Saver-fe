@@ -11,10 +11,10 @@ const ControlsBelow=()=>{
                 </Col>
                 <Col sm={10} className='row align-items-center'>
                     <Col sm={6}>
-                        ?
+                        about
                     </Col>
                     <Col sm={6}>
-                        urls
+                        ?
                     </Col>
                 </Col>
                 <Col sm={1}>
