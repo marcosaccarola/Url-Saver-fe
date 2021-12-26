@@ -4,6 +4,13 @@ import { Button, Col, Form, Row } from "react-bootstrap"
 const Login=()=>{
     const[email,setEmail]=useState()
     const[pw,setPw]=useState()
+    const loginUser=()=>{
+        // login()
+    }
+    const registerUser=()=>{
+        // register()
+    }
+    
 
     return(
         <Row className='justify-content-center'>
@@ -11,7 +18,7 @@ const Login=()=>{
                 <Form>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" />
+                        <Form.Control type="email" placeholder="Enter email" onChange={(e)=>setEmail(e.target.value)} />
                         <Form.Text className="text-muted">
                         We'll never share your email with anyone else.
                         </Form.Text>
@@ -19,17 +26,17 @@ const Login=()=>{
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password" />
+                        <Form.Control type="password" placeholder="Password" onChange={(e)=>setPw(e.target.value)} />
                     </Form.Group>
 
                     <Row>
                         <Col sm={6}>
-                            <Button variant="primary" type="submit">
+                            <Button variant="primary" type="submit" onClick={loginUser}>
                                 Login
                             </Button>
                         </Col>
                         <Col sm={6}>
-                            <Button variant="primary" type="submit">
+                            <Button variant="primary" type="submit" onClick={registerUser}>
                                 Signin
                             </Button>
                         </Col>
