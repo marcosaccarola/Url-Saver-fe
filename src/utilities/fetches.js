@@ -1,4 +1,4 @@
-const USER_URL='http://localhost:3000/user'
+const USER_URL='http://localhost:3001/user'
 
 //*______________________________________________ REGISTER
 export const register=async({email,pw,setUser})=>{
@@ -6,7 +6,7 @@ export const register=async({email,pw,setUser})=>{
         const responseRegister=await fetch(USER_URL,
             {
                 method:'POST',
-                body:JSON.stringify(email,pw),
+                body:JSON.stringify({email,pw}),
                 headers:{'Content-Type':'application/json'}
             })
             if(responseRegister.ok){
@@ -26,7 +26,7 @@ export const login=async({email,pw,setUser})=>{
         const responseUser=await fetch(USER_URL+'/login',
             {
                 method:'POST',
-                body:JSON.stringify(email,pw),
+                body:JSON.stringify({email,pw}),
                 headers:{'Content-Type':'application/json'}
             })
             if(responseUser.ok){

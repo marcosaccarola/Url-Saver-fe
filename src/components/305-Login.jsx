@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Button, Col, Form, Row } from "react-bootstrap"
-import { login } from "../utilities/fetches"
+import { login, register } from "../utilities/fetches"
 
 const Login=({setUser})=>{
     const[email,setEmail]=useState()
@@ -9,7 +9,7 @@ const Login=({setUser})=>{
         login({email,pw,setUser})
     }
     const registerUser=()=>{
-        // register()
+        register({email,pw,setUser})
     }
     
 
