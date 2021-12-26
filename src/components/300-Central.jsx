@@ -27,7 +27,7 @@ const Central=({user,setUser})=>{
                             </Col>
                         </>
                         :
-                        <Col sm={12} className='bg-light'>
+                        <Col sm={12} className='bg-light my-auto'>
                             <Login setUser={setUser} />
                         </Col>                  
                         }
