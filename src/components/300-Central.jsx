@@ -5,7 +5,7 @@ import Login from './305-Login'
 import BoxGroups from './310-BoxGroups'
 import BoxUrls from './320-BoxUrls'
 
-const Central=({user})=>{
+const Central=({user,setUser})=>{
     const[selectedGroup,setSelectedGroup]=useState()
 
     return(
@@ -28,7 +28,7 @@ const Central=({user})=>{
                         </>
                         :
                         <Col sm={12} className='bg-light'>
-                            <Login />
+                            <Login setUser={setUser} />
                         </Col>                  
                         }
                     </Row>

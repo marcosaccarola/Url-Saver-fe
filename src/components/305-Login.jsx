@@ -1,11 +1,12 @@
 import { useState } from "react"
 import { Button, Col, Form, Row } from "react-bootstrap"
+import { login } from "../utilities/fetches"
 
-const Login=()=>{
+const Login=({setUser})=>{
     const[email,setEmail]=useState()
     const[pw,setPw]=useState()
     const loginUser=()=>{
-        // login()
+        login({email,pw,setUser})
     }
     const registerUser=()=>{
         // register()

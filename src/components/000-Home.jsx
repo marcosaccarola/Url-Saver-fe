@@ -155,9 +155,9 @@ const Home=()=>{
 
     return(
         <>
-            <Bar user={user} setUser={setUser} />
+            <Bar user={user} />
             <ControlsAbove />
-            <Central user={user} />
+            <Central user={user} setUser={setUser} />
             <ControlsBelow />
         </>
     )
