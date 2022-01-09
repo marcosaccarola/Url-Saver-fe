@@ -1,18 +1,28 @@
+/*? _____________________________________________ NAVBAR */
 .bar {
   background: tomato;
   color: #000000;
   height: 8vh;
 }
 
+/*? _____________________________________________ ABOVE */
 .controls-above {
   background: grey;
   height: 8vh;
 }
 
+/*? _____________________________________________ WINGS */
 .wings {
   background: grey;
 }
 
+/*? _____________________________________________ BELOW */
+.controls-below {
+  background: grey;
+  height: 8vh;
+}
+
+/*? _____________________________________________ MAIN (CENTRAL) */
 .central {
   background: honeydew;
   height: 76vh;
@@ -27,9 +37,4 @@
   overflow-y: auto !important;
   overflow-x: hidden;
   max-height: 76vh;
-}
-
-.controls-below {
-  background: grey;
-  height: 8vh;
 }

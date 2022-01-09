@@ -12,7 +12,6 @@ const Login=({setUser})=>{
         register({email,pw,setUser})
     }
     
-
     return(
         <Row className='justify-content-center'>
             <Col sm={6}>
