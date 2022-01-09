@@ -1,13 +1,14 @@
-import { Col, Row } from 'react-bootstrap'
+import { Col, Image, Row } from 'react-bootstrap'
 import './000.css'
+import logo from '../assets/logo.png'
 
 const Bar=({user,setUser})=>{
 
     return(
         <>
-            <Row className='bar vw-100 align-items-center'>
+            <Row className='bar bg-warning vw-100 align-items-center'>
                 <Col sm={2}>
-                    logo
+                    <img className='img-fluid bar bg-warning' src={logo} style={{}} />
                 </Col>
                 <Col sm={8}>
                     home
