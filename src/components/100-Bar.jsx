@@ -10,7 +10,7 @@ const Bar=({user,setUser})=>{
             <Row className='bar bg-warning vw-100 align-items-center'>
                 <Col sm={3}>
                     <img className='img-fluid bar bg-warning' src={logo}/>
-                    <span>Url Container</span>
+                    <span>Urls Container</span>
                 </Col>
                 <Col sm={6}>
                     <BsQuestionLg />
@@ -18,7 +18,7 @@ const Bar=({user,setUser})=>{
                 <Col sm={3}>
                     {
                         user&&user.avatar&&
-                        <img src={user.avatar} />
+                        <img className='img-fluid bar bg-warning' src={user.avatar} />
                     }
                 </Col>
             </Row>

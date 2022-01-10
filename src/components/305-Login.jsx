@@ -6,7 +6,8 @@ const Login=({setUser})=>{
     const[email,setEmail]=useState()
     const[pw,setPw]=useState()
     const loginUser=()=>{
-        login({email,pw,setUser})
+        // login({email,pw,setUser})
+        console.log({email,pw})
     }
     const registerUser=()=>{
         register({email,pw,setUser})
