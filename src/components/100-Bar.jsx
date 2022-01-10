@@ -15,26 +15,26 @@ const Bar=({user,setUser})=>{
                 <Container>
                     <Navbar.Brand href="#home">
                         <AiFillContainer size={40} className='me-3' />
-                    Urls Containers
+                        Urls Containers
                     </Navbar.Brand>    
                     <Nav className="">
-                        {/* <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#features">Features</Nav.Link>
-                        <Nav.Link href="#pricing">Pricing</Nav.Link> */}
+                        {/* 
+                        <Nav.Link href="#features">?</Nav.Link>
+                        */}
                     </Nav>
-                    {
-                        user
-                        ?
-                            <Navbar.Brand href="#home">
-                                {user.email}
-                                <FiUserCheck size={40} className='ms-3' />
-                            </Navbar.Brand>
-                        :
-                            <Navbar.Brand href="#home" className='text-danger'>
-                                Login or Signin
-                                <FiUserCheck size={40} className='ms-3'/>
-                            </Navbar.Brand>
-                    }
+                {
+                user
+                ?
+                    <Navbar.Brand href="#home">
+                        {user.email}
+                        <FiUserCheck size={40} className='ms-3' />
+                    </Navbar.Brand>
+                :
+                    <Navbar.Brand href="#home" className='text-danger'>
+                        Login or Signin
+                        <FiUserCheck size={40} className='ms-3'/>
+                    </Navbar.Brand>
+                }
                 </Container>
             </Navbar>
 

@@ -11,30 +11,31 @@ const Central=({user,setUser})=>{
     return(
             <Row className='vw-100'>
 
-                <Col sm={1} className='wings'>                    
+                <Col sm={1} className=''>                    
                 </Col>
 
                 <Col sm={10}>
                     <Row className='central text-black'>
-                        {user
-                        ?
+                    {
+                    user
+                    ?
                         <>
-                            <Col sm={6} className='box-groups overY'>
-                                <BoxGroups user={user} setSelectedGroup={setSelectedGroup} />
-                            </Col>
-                            <Col sm={6} className='box-urls overY'>
-                                <BoxUrls selectedGroup={selectedGroup} />
-                            </Col>
+                        <Col sm={6} className='border border-warning overY'>
+                            <BoxGroups user={user} setSelectedGroup={setSelectedGroup} />
+                        </Col>
+                        <Col sm={6} className='border border-warning overY'>
+                            <BoxUrls selectedGroup={selectedGroup} />
+                        </Col>
                         </>
-                        :
+                    :
                         <Col sm={12} className='bg-light my-auto'>
                             <Login setUser={setUser} />
                         </Col>                  
-                        }
+                    }
                     </Row>
                 </Col>
 
-                <Col sm={1} className='wings'>
+                <Col sm={1} className=''>
                 </Col>
 
             </Row>

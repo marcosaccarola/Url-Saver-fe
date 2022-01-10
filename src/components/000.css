@@ -7,7 +7,7 @@
 
 /*? _____________________________________________ ABOVE */
 .controls-above {
-  background: grey;
+  /* background: grey; */
   height: 8vh;
 }
 
@@ -18,17 +18,18 @@
 
 /*? _____________________________________________ BELOW */
 .controls-below {
-  background: grey;
+  /* background: grey; */
   height: 8vh;
 }
 
 /*? _____________________________________________ MAIN (CENTRAL) */
 .central {
-  background: honeydew;
+  /* background: honeydew; */
   height: 76vh;
 }
 .box-groups {
-  background: yellowgreen;
+  border-style: solid;
+  border-color: yellowgreen;
 }
 .box-urls {
   background: red;

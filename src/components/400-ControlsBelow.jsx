@@ -6,7 +6,7 @@ const ControlsBelow=()=>{
     return(
         <>
             <Row className='controls-below vw-100'>
-                <Col sm={1}>
+                {/* <Col sm={1}>
                     
                 </Col>
                 <Col sm={10} className='row align-items-center'>
@@ -19,7 +19,7 @@ const ControlsBelow=()=>{
                 </Col>
                 <Col sm={1}>
                     
-                </Col>
+                </Col> */}
             </Row>
         </>
     )
