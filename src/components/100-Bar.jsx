@@ -11,7 +11,7 @@ const Bar=({user,setUser})=>{
         <>
 
             {/* REACT-BOOTSTRAP */}
-            <Navbar bg="warning" variant="">
+            <Navbar bg="light" variant="" >
                 <Container>
                     <Navbar.Brand href="#home">
                         <AiFillContainer size={40} className='me-3' />
