@@ -1,10 +1,10 @@
-import { Col, Row } from 'react-bootstrap'
+import { Col, Container, Row } from 'react-bootstrap'
 import './000.css'
 
 const ControlsAbove=()=>{
 
     return(
-        <>
+        <Container fluid>
             <Row className='controls-above vw-100'>
                 {/* <Col sm={1}>
                     
@@ -21,7 +21,7 @@ const ControlsAbove=()=>{
                     
                 </Col> */}
             </Row>
-        </>
+        </Container>
     )
 }
 

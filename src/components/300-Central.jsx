@@ -9,6 +9,7 @@ const Central=({user,setUser})=>{
     const[selectedGroup,setSelectedGroup]=useState()
 
     return(
+        <Container fluid>
             <Row className='vw-100'>
 
                 <Col sm={1} className=''>                    
@@ -39,6 +40,7 @@ const Central=({user,setUser})=>{
                 </Col>
 
             </Row>
+        </Container>
     )
 }
 
