@@ -1,7 +1,8 @@
 const USER_URL='http://localhost:3001/user'
 const GROUP_URL='http://localhost:3001/group'
+const URL_URL='http://localhost:3001/url'
 
-//*______________________________________________ REGISTER
+//*______________________________________________ REGISTER USER
 export const register=async({email,pw,setUser})=>{
     try {
         const responseRegister=await fetch(USER_URL,
@@ -21,7 +22,7 @@ export const register=async({email,pw,setUser})=>{
         throw error
     }
 }
-//*______________________________________________ LOGIN
+//*______________________________________________ LOGIN USER
 export const login=async({email,pw,setUser})=>{
     try {
         const responseUser=await fetch(USER_URL+'/login',

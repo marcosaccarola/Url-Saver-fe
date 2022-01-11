@@ -69,15 +69,14 @@ const BoxGroups=({user,setUser,setSelectedGroup})=>{
             <ButtonGroup vertical>
 
                 <Col>
-            {user&&user.groups.map(g=>
-            <Col>
-                    <Button onClick={()=>removeGroup(g)}>Delete</Button>
-                    <Button onClick={()=>handleshowPutGroup(g._id)}>Update</Button>
-                    <Button key={g._id} onClick={()=>setSelectedGroup(g)}>{g.name}</Button> 
-            </Col>
-            )}
-
-            {showPutGroup==true&&
+        {user&&user.groups.map(g=>
+                    <Col>
+                        <Button onClick={()=>removeGroup(g)}>Delete</Button>
+                        <Button onClick={()=>handleshowPutGroup(g._id)}>Update</Button>
+                        <Button key={g._id} onClick={()=>setSelectedGroup(g)}>{g.name}</Button> 
+                    </Col>
+        )}
+        {showPutGroup==true&&
                             <Form>
                                 <Form.Group as={Button} className="mb-3" controlId="formBasicEmail">
                                 <Form.Control type="text" placeholder="New group name" onChange={(e)=>handleGroupNamePut(e)}/>
@@ -85,14 +84,14 @@ const BoxGroups=({user,setUser,setSelectedGroup})=>{
                                 <Button onClick={()=>modifyGroup()}>save</Button>
                                 <Button onClick={()=>handleshowPutGroup()}>cancel</Button>
                             </Form>
-            }
+        }           
                 </Col>
 
                 <Col>
-            {showPostGroup==false
-            ?
+        {showPostGroup==false
+        ?
                     <Button onClick={()=>handleshowPostGroup()}>add Group</Button>
-            :
+        :
                     <Form>
                         <Form.Group as={Button} className="mb-3" controlId="formBasicEmail">
                         <Form.Control type="text" placeholder="Group name" onChange={(e)=>handleGroupNamePost(e)}/>
@@ -100,7 +99,7 @@ const BoxGroups=({user,setUser,setSelectedGroup})=>{
                         <Button onClick={()=>addGroup()}>save</Button>
                         <Button onClick={()=>handleshowPostGroup()}>cancel</Button>
                     </Form>
-            }
+        }
                 </Col>
 
             </ButtonGroup>
