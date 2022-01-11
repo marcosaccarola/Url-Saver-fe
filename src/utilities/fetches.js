@@ -42,19 +42,19 @@ export const login=async({email,pw,setUser})=>{
     }
 }
 //*______________________________________________ ADD GROUP
-export const postGroup=async({userId,groupToAdd,setSelectedGroup})=>{
+export const postGroup=async({userId,groupToAdd,setUser})=>{
     try {
         const responsePostGroup=await fetch(GROUP_URL+`/${userId}`,
                 {
                     method:'POST',
-                    body:JSON.stringify({groupToAdd}),
+                    body:JSON.stringify(groupToAdd),
                     headers:{'Content-Type':'application/json'}
                 }
             )
             if(responsePostGroup.ok){
-                let newGroup=await responsePostGroup.json()
-                setSelectedGroup(newGroup)
-                console.log(newGroup)
+                let updatedUser=await responsePostGroup.json()
+                setUser(updatedUser)
+                console.log(updatedUser)
             }else{
                 console.log('Group not added')
             }

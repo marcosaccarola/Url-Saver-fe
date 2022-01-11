@@ -4,7 +4,7 @@ import { Button, ButtonGroup, Col, DropdownButton, Form, Modal, Row } from 'reac
 import { postGroup } from '../utilities/fetches'
 import './000.css'
 
-const BoxGroups=({user,setSelectedGroup})=>{
+const BoxGroups=({user,setUser,setSelectedGroup})=>{
     const[showGroupModal,setShowGroupModal]=useState(false)
     const handleShowGroupModal=()=>{
         console.log(showGroupModal)
@@ -15,9 +15,10 @@ const BoxGroups=({user,setSelectedGroup})=>{
     const handleGroupName=(e)=>{
         setNewGroupName(e.target.value)
     }
-    
+
     const addGroup=()=>{
-        postGroup({"userId":user._id,"groupToAdd":{"name":newGroupName},setSelectedGroup})
+        postGroup({"userId":user._id,"groupToAdd":{"name":newGroupName},setUser})
+        handleShowGroupModal()
     }
 
     return(
