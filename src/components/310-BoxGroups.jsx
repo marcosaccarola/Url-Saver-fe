@@ -1,10 +1,11 @@
 import { Dropdown } from 'bootstrap'
 import {useState} from 'react'
 import { Button, ButtonGroup, Col, DropdownButton, Form, Modal, Row } from 'react-bootstrap'
-import { postGroup } from '../utilities/fetches'
+import { deleteGroup, postGroup } from '../utilities/fetches'
 import './000.css'
 
 const BoxGroups=({user,setUser,setSelectedGroup})=>{
+    
     const[showGroupModal,setShowGroupModal]=useState(false)
     const handleShowGroupModal=()=>{
         console.log(showGroupModal)
@@ -17,13 +18,15 @@ const BoxGroups=({user,setUser,setSelectedGroup})=>{
     }
 
     const addGroup=()=>{
-        postGroup({"userId":user._id,"groupToAdd":{"name":newGroupName},setUser})
+        postGroup({"userId":user.id,"groupToAdd":{"name":newGroupName},setUser})
         handleShowGroupModal()
+    }
+    const removeGroup=(g)=>{
+        deleteGroup({"groupId":g._id,"userId":user._id,setUser})
     }
 
     return(
-        // <div className='mx-3 my-3 bg-dark text-light'>
-            <>
+        <>
 
             {/* ROWS & COLS
             {user&&user.groups.map(g=>
@@ -48,27 +51,30 @@ const BoxGroups=({user,setUser,setSelectedGroup})=>{
             <ButtonGroup vertical>
 
             {user&&user.groups.map(g=>
-                <Button key={g._id} onClick={()=>setSelectedGroup(g)}>{g.name}</Button>
+                <Col>
+                    <Button onClick={()=>removeGroup(g)}>Delete</Button>
+                    <Button key={g._id} onClick={()=>setSelectedGroup(g)}>{g.name}</Button>
+                </Col>
             )}
 
+                <Col>
             {showGroupModal==false
             ?
-                <Button onClick={()=>handleShowGroupModal()}>add Group</Button>
+                    <Button onClick={()=>handleShowGroupModal()}>add Group</Button>
             :
-                <Form>
-                    <Form.Group as={Button} className="mb-3" controlId="formBasicEmail">
-                    <Form.Control type="text" placeholder="Group name" onChange={(e)=>handleGroupName(e)}/>
-                    </Form.Group>
-                    <Button onClick={()=>addGroup()}>save</Button>
-                    <Button onClick={()=>handleShowGroupModal()}>cancel</Button>
-                </Form>
+                    <Form>
+                        <Form.Group as={Button} className="mb-3" controlId="formBasicEmail">
+                        <Form.Control type="text" placeholder="Group name" onChange={(e)=>handleGroupName(e)}/>
+                        </Form.Group>
+                        <Button onClick={()=>addGroup()}>save</Button>
+                        <Button onClick={()=>handleShowGroupModal()}>cancel</Button>
+                    </Form>
             }
+                </Col>
 
             </ButtonGroup>
-            
 
         </>
-        // </div>
     )
 }
 

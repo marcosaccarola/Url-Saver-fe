@@ -41,7 +41,7 @@ export const login=async({email,pw,setUser})=>{
         throw error
     }
 }
-//*______________________________________________ ADD GROUP
+//*______________________________________________ POST GROUP
 export const postGroup=async({userId,groupToAdd,setUser})=>{
     try {
         const responsePostGroup=await fetch(GROUP_URL+`/${userId}`,
@@ -54,10 +54,27 @@ export const postGroup=async({userId,groupToAdd,setUser})=>{
             if(responsePostGroup.ok){
                 let updatedUser=await responsePostGroup.json()
                 setUser(updatedUser)
-                console.log(updatedUser)
             }else{
                 console.log('Group not added')
             }
+    } catch (error) {
+        throw error
+    }
+}
+//*______________________________________________ DELETE GROUP
+export const deleteGroup=async({groupId,userId,setUser})=>{
+    try {
+        const responseDeleteGroup=await fetch(GROUP_URL+`/${groupId}`+`/${userId}`,
+            {
+                method:'DELETE'
+            }
+        )
+        if(responseDeleteGroup.ok){
+            let updatedUser=await responseDeleteGroup.json()
+            setUser(updatedUser)
+        }else{
+            console.log('Group not deleted')
+        }
     } catch (error) {
         throw error
     }
