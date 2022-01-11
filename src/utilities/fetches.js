@@ -100,3 +100,25 @@ export const deleteGroup=async({groupId,userId,setUser})=>{
         throw error
     }
 }
+//*______________________________________________ POST URL
+export const postUrl=async({groupId,urlToPost,userId,setUser,setSelectedGroup})=>{
+    console.log('HERE')
+    console.log(groupId,urlToPost,userId)
+    try {
+        const responsePostUrl=await fetch(URL_URL+`/${groupId}/${userId}`,
+        {
+            method:'POST',
+            body:JSON.stringify(urlToPost),
+            headers:{'Content-Type':'application/json'}
+        }
+        )
+        if(responsePostUrl.ok){
+            let updatedGroup=await responsePostUrl.json()
+            setSelectedGroup(updatedGroup)
+        }else{
+            console.log('Url not added')
+        }
+    } catch (error) {
+        throw error
+    }
+}

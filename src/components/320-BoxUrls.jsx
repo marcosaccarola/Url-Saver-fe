@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { Button, ButtonGroup, Col, Form, Row } from 'react-bootstrap'
+import { postUrl } from '../utilities/fetches'
 import './000.css'
 
-const BoxUrls=({user,setUser,selectedGroup})=>{
+const BoxUrls=({user,setUser,selectedGroup,setSelectedGroup})=>{
 
         //!__________________________________________ POST GROUP
         const[showPostUrl,setshowPostUrl]=useState(false)
@@ -19,8 +20,8 @@ const BoxUrls=({user,setUser,selectedGroup})=>{
             setUrlToPost(e.target.value)
         }
         const addUrl=()=>{
-            console.log('USER: ',user)
-            // postUrl({"userId":user._id,"groupToAdd":{"name":groupToPost},setUser})
+            // console.log('USER: ',user)
+            postUrl({"groupId":selectedGroup._id,"urlToPost":{"name":nameToPost,"url":urlToPost},"userId":user._id,setUser,setSelectedGroup})
             handleshowPostUrl()
         }
         //!__________________________________________ PUT GROUP
@@ -76,7 +77,7 @@ const BoxUrls=({user,setUser,selectedGroup})=>{
                 :
                     <Form>
                         <Form.Group as={Button} className="mb-3" controlId="formBasicEmail">
-                        <Form.Control type="text" placeholder="Link name" onChange={(e)=>handleLinkNamePost(e)}/>
+                        <Form.Control type="text" placeholder="Link name" onChange={(e)=>handleLinkNameToPost(e)}/>
                         <Form.Control type="text" placeholder="Url" onChange={(e)=>handleLinkUrlToPost(e)}/>
                         </Form.Group>
                         <Button onClick={()=>addUrl()}>save</Button>
