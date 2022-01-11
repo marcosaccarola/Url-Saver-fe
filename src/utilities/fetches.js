@@ -63,11 +63,6 @@ export const postGroup=async({userId,groupToAdd,setUser})=>{
 }
 //*______________________________________________ PUT GROUP
 export const putGroup=async({groupId,userId,groupToPut,setUser})=>{
-    console.log(
-        groupId,
-        userId,
-        groupToPut
-    )
     try {
         const responsePutGroup=await fetch(GROUP_URL+`/${groupId}/${userId}`,
                 {

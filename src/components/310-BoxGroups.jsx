@@ -17,7 +17,8 @@ const BoxGroups=({user,setUser,setSelectedGroup})=>{
         setgroupToPost(e.target.value)
     }
     const addGroup=()=>{
-        postGroup({"userId":user.id,"groupToAdd":{"name":groupToPost},setUser})
+        console.log('USER: ',user)
+        postGroup({"userId":user._id,"groupToAdd":{"name":groupToPost},setUser})
         handleshowPostGroup()
     }
     //!__________________________________________ PUT GROUP
