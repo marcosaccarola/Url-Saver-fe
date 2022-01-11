@@ -70,10 +70,10 @@ const BoxGroups=({user,setUser,setSelectedGroup})=>{
 
                 <Col>
         {user&&user.groups.map(g=>
-                    <Col>
+                    <Col key={g._id}>
                         <Button onClick={()=>removeGroup(g)}>Delete</Button>
                         <Button onClick={()=>handleshowPutGroup(g._id)}>Update</Button>
-                        <Button key={g._id} onClick={()=>setSelectedGroup(g)}>{g.name}</Button> 
+                        <Button onClick={()=>setSelectedGroup(g)}>{g.name}</Button> 
                     </Col>
         )}
         {showPutGroup==true&&
