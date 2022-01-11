@@ -1,14 +1,21 @@
-import { Col, Row } from 'react-bootstrap'
+import { Dropdown } from 'bootstrap'
+import {useState} from 'react'
+import { Button, ButtonGroup, Col, DropdownButton, Row } from 'react-bootstrap'
+import { postGroup } from '../utilities/fetches'
 import './000.css'
 
 const BoxGroups=({user,setSelectedGroup})=>{
+    const[newGroupName,setNewGroupName]=useState()
 
-    const addContainer=()=>{
-        addGroup()
+    const addGroup=()=>{
+        postGroup({"userId":user._id,"groupToAdd":{"name":newGroupName},setSelectedGroup})
     }
 
     return(
-        <div className='mx-3 my-3 bg-dark text-light'>
+        // <div className='mx-3 my-3 bg-dark text-light'>
+            <>
+
+            {/* ROWS & COLS
             {user&&user.groups.map(g=>
                 <Row key={g._id}>
                     <Col sm={12} className='text-start'>
@@ -23,10 +30,23 @@ const BoxGroups=({user,setSelectedGroup})=>{
                     <Col sm={12} className='text-start'>
                         <span 
                             className='container text-muted'
-                            onClick={()=>addContainer()}>add container</span>
+                            onClick={()=>addContainer()}>add group</span>
                     </Col>
-                </Row>
-        </div>
+                </Row> */}
+
+            {/* BUTTON GROUP */}
+            <ButtonGroup vertical>
+
+                {user&&user.groups.map(g=>
+                    <Button key={g._id} onClick={()=>setSelectedGroup(g)}>{g.name}</Button>
+                )}
+
+                <Button onClick={()=>addGroup()}>add Group</Button>
+
+            </ButtonGroup>
+
+        </>
+        // </div>
     )
 }
 
