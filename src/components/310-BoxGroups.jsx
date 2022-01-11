@@ -1,26 +1,43 @@
 import { Dropdown } from 'bootstrap'
 import {useState} from 'react'
 import { Button, ButtonGroup, Col, DropdownButton, Form, Modal, Row } from 'react-bootstrap'
-import { deleteGroup, postGroup } from '../utilities/fetches'
+import { deleteGroup, putGroup, postGroup } from '../utilities/fetches'
 import './000.css'
 
 const BoxGroups=({user,setUser,setSelectedGroup})=>{
     
-    const[showGroupModal,setShowGroupModal]=useState(false)
-    const handleShowGroupModal=()=>{
-        console.log(showGroupModal)
-        showGroupModal==false?setShowGroupModal(true):setShowGroupModal(false)
+    //!__________________________________________ POST GROUP
+    const[showPostGroup,setshowPostGroup]=useState(false)
+    const handleshowPostGroup=()=>{
+        console.log(showPostGroup)
+        showPostGroup==false?setshowPostGroup(true):setshowPostGroup(false)
     }
-
-    const[newGroupName,setNewGroupName]=useState()
-    const handleGroupName=(e)=>{
-        setNewGroupName(e.target.value)
+    const[groupToPost,setgroupToPost]=useState()
+    const handleGroupNamePost=(e)=>{
+        setgroupToPost(e.target.value)
     }
-
     const addGroup=()=>{
-        postGroup({"userId":user.id,"groupToAdd":{"name":newGroupName},setUser})
-        handleShowGroupModal()
+        postGroup({"userId":user.id,"groupToAdd":{"name":groupToPost},setUser})
+        handleshowPostGroup()
     }
+    //!__________________________________________ PUT GROUP
+    const[showPutGroup,setshowPutGroup]=useState(false)
+    const[GroupToPutId,setGroupToPutId]=useState()
+    const handleshowPutGroup=(groupId)=>{
+        showPutGroup==false?setshowPutGroup(true):setshowPutGroup(false)
+        setGroupToPutId(groupId)
+    }
+    const[groupToPut,setgroupToPut]=useState()
+    const handleGroupNamePut=(e)=>{
+        setgroupToPut(e.target.value)
+    }
+    const modifyGroup=()=>{
+        putGroup({"groupId":GroupToPutId,"userId":user._id,"groupToPut":{"name":groupToPut},setUser})
+        handleshowPutGroup()
+        setGroupToPutId()
+        setgroupToPut()
+    }
+    //!__________________________________________ DELETE GROUP
     const removeGroup=(g)=>{
         deleteGroup({"groupId":g._id,"userId":user._id,setUser})
     }
@@ -50,24 +67,37 @@ const BoxGroups=({user,setUser,setSelectedGroup})=>{
             {/* BUTTON GROUP */}
             <ButtonGroup vertical>
 
-            {user&&user.groups.map(g=>
                 <Col>
+            {user&&user.groups.map(g=>
+            <Col>
                     <Button onClick={()=>removeGroup(g)}>Delete</Button>
-                    <Button key={g._id} onClick={()=>setSelectedGroup(g)}>{g.name}</Button>
-                </Col>
+                    <Button onClick={()=>handleshowPutGroup(g._id)}>Update</Button>
+                    <Button key={g._id} onClick={()=>setSelectedGroup(g)}>{g.name}</Button> 
+            </Col>
             )}
 
+            {showPutGroup==true&&
+                            <Form>
+                                <Form.Group as={Button} className="mb-3" controlId="formBasicEmail">
+                                <Form.Control type="text" placeholder="New group name" onChange={(e)=>handleGroupNamePut(e)}/>
+                                </Form.Group>
+                                <Button onClick={()=>modifyGroup()}>save</Button>
+                                <Button onClick={()=>handleshowPutGroup()}>cancel</Button>
+                            </Form>
+            }
+                </Col>
+
                 <Col>
-            {showGroupModal==false
+            {showPostGroup==false
             ?
-                    <Button onClick={()=>handleShowGroupModal()}>add Group</Button>
+                    <Button onClick={()=>handleshowPostGroup()}>add Group</Button>
             :
                     <Form>
                         <Form.Group as={Button} className="mb-3" controlId="formBasicEmail">
-                        <Form.Control type="text" placeholder="Group name" onChange={(e)=>handleGroupName(e)}/>
+                        <Form.Control type="text" placeholder="Group name" onChange={(e)=>handleGroupNamePost(e)}/>
                         </Form.Group>
                         <Button onClick={()=>addGroup()}>save</Button>
-                        <Button onClick={()=>handleShowGroupModal()}>cancel</Button>
+                        <Button onClick={()=>handleshowPostGroup()}>cancel</Button>
                     </Form>
             }
                 </Col>
