@@ -2,23 +2,27 @@ import { useState } from 'react'
 import { Button, ButtonGroup, Col, Form, Row } from 'react-bootstrap'
 import './000.css'
 
-const BoxUrls=({setUser,selectedGroup})=>{
+const BoxUrls=({user,setUser,selectedGroup})=>{
 
         //!__________________________________________ POST GROUP
-        // const[showPostGroup,setshowPostGroup]=useState(false)
-        // const handleshowPostGroup=()=>{
-        //     console.log(showPostGroup)
-        //     showPostGroup==false?setshowPostGroup(true):setshowPostGroup(false)
-        // }
-        // const[groupToPost,setgroupToPost]=useState()
-        // const handleGroupNamePost=(e)=>{
-        //     setgroupToPost(e.target.value)
-        // }
-        // const addGroup=()=>{
-        //     console.log('USER: ',user)
-        //     postGroup({"userId":user._id,"groupToAdd":{"name":groupToPost},setUser})
-        //     handleshowPostGroup()
-        // }
+        const[showPostUrl,setshowPostUrl]=useState(false)
+        const handleshowPostUrl=()=>{
+            console.log(showPostUrl)
+            showPostUrl==false?setshowPostUrl(true):setshowPostUrl(false)
+        }
+        const[nameToPost,setNameToPost]=useState()
+        const handleLinkNameToPost=(e)=>{
+            setNameToPost(e.target.value)
+        }
+        const[urlToPost,setUrlToPost]=useState()
+        const handleLinkUrlToPost=(e)=>{
+            setUrlToPost(e.target.value)
+        }
+        const addUrl=()=>{
+            console.log('USER: ',user)
+            // postUrl({"userId":user._id,"groupToAdd":{"name":groupToPost},setUser})
+            handleshowPostUrl()
+        }
         //!__________________________________________ PUT GROUP
         // const[showPutGroup,setshowPutGroup]=useState(false)
         // const[GroupToPutId,setGroupToPutId]=useState()
@@ -51,7 +55,7 @@ const BoxUrls=({setUser,selectedGroup})=>{
                     <Col key={u._id}>
                         {/* <Button onClick={()=>removeGroup(u)}>Delete</Button> */}
                         {/* <Button onClick={()=>handleshowPutGroup(u._id)}>Update</Button> */}
-                        <Button>{u.name}</Button> 
+                        <Button onClick={()=>window.open(u.url)}>{u.name}</Button> 
                     </Col>
                 )}
                 {/* {showPutGroup==true&&
@@ -65,20 +69,21 @@ const BoxUrls=({setUser,selectedGroup})=>{
                 }            */}
                 </Col>
 
-                {/* <Col>
-                {showPostGroup==false
+                <Col>
+                {showPostUrl==false
                 ?
-                    <Button onClick={()=>handleshowPostGroup()}>add Group</Button>
+                    <Button onClick={()=>handleshowPostUrl()}>add Url</Button>
                 :
                     <Form>
                         <Form.Group as={Button} className="mb-3" controlId="formBasicEmail">
-                        <Form.Control type="text" placeholder="Group name" onChange={(e)=>handleGroupNamePost(e)}/>
+                        <Form.Control type="text" placeholder="Link name" onChange={(e)=>handleLinkNamePost(e)}/>
+                        <Form.Control type="text" placeholder="Url" onChange={(e)=>handleLinkUrlToPost(e)}/>
                         </Form.Group>
-                        <Button onClick={()=>addGroup()}>save</Button>
-                        <Button onClick={()=>handleshowPostGroup()}>cancel</Button>
+                        <Button onClick={()=>addUrl()}>save</Button>
+                        <Button onClick={()=>handleshowPostUrl()}>cancel</Button>
                     </Form>
                 }
-                </Col> */}
+                </Col>
 
             </ButtonGroup>
         </>
