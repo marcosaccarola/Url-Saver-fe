@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Button, ButtonGroup, Col, Form, Row } from 'react-bootstrap'
-import { postUrl } from '../utilities/fetches'
+import { deleteUrl, postUrl } from '../utilities/fetches'
 import './000.css'
 
 const BoxUrls=({user,setUser,selectedGroup,setSelectedGroup})=>{
@@ -8,7 +8,6 @@ const BoxUrls=({user,setUser,selectedGroup,setSelectedGroup})=>{
         //!__________________________________________ POST GROUP
         const[showPostUrl,setshowPostUrl]=useState(false)
         const handleshowPostUrl=()=>{
-            console.log(showPostUrl)
             showPostUrl==false?setshowPostUrl(true):setshowPostUrl(false)
         }
         const[nameToPost,setNameToPost]=useState()
@@ -42,9 +41,9 @@ const BoxUrls=({user,setUser,selectedGroup,setSelectedGroup})=>{
         //     setgroupToPut()
         // }
         //!__________________________________________ DELETE GROUP
-        // const removeGroup=(g)=>{
-        //     deleteGroup({"groupId":g._id,"userId":user._id,setUser})
-        // }
+        const removeUrl=(u)=>{
+            deleteUrl({"groupId":selectedGroup._id,"urlId":u._id,setSelectedGroup})
+        }
 
 
     return(
@@ -54,7 +53,7 @@ const BoxUrls=({user,setUser,selectedGroup,setSelectedGroup})=>{
                 <Col>
                 {selectedGroup&&selectedGroup.urls.map(u=>
                     <Col key={u._id}>
-                        {/* <Button onClick={()=>removeGroup(u)}>Delete</Button> */}
+                        <Button onClick={()=>removeUrl(u)}>Delete</Button>
                         {/* <Button onClick={()=>handleshowPutGroup(u._id)}>Update</Button> */}
                         <Button onClick={()=>window.open(u.url)}>{u.name}</Button> 
                     </Col>

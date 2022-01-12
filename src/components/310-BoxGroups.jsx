@@ -9,7 +9,6 @@ const BoxGroups=({user,setUser,setSelectedGroup})=>{
     //!__________________________________________ POST GROUP
     const[showPostGroup,setshowPostGroup]=useState(false)
     const handleshowPostGroup=()=>{
-        console.log(showPostGroup)
         showPostGroup==false?setshowPostGroup(true):setshowPostGroup(false)
     }
     const[groupToPost,setgroupToPost]=useState()

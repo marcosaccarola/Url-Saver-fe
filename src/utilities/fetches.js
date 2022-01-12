@@ -102,8 +102,6 @@ export const deleteGroup=async({groupId,userId,setUser})=>{
 }
 //*______________________________________________ POST URL
 export const postUrl=async({groupId,urlToPost,userId,setUser,setSelectedGroup})=>{
-    console.log('HERE')
-    console.log(groupId,urlToPost,userId)
     try {
         const responsePostUrl=await fetch(URL_URL+`/${groupId}/${userId}`,
         {
@@ -117,6 +115,26 @@ export const postUrl=async({groupId,urlToPost,userId,setUser,setSelectedGroup})=
             setSelectedGroup(updatedGroup)
         }else{
             console.log('Url not added')
+        }
+    } catch (error) {
+        throw error
+    }
+}
+//*______________________________________________ DELETE URL
+export const deleteUrl=async({groupId,urlId,setSelectedGroup})=>{
+    console.log(groupId,urlId)
+    try {
+        const responseDeleteUrl=await fetch(URL_URL+`/${groupId}/${urlId}`,
+            {
+                method:'DELETE',
+            }
+        )
+        if(responseDeleteUrl.ok){
+            let updatedGroup=await responseDeleteUrl.json()
+            setSelectedGroup(updatedGroup)
+            console.log('UPDATED GROUP:',updatedGroup)
+        }else{
+            console.log('Url not deleted')
         }
     } catch (error) {
         throw error
