@@ -48,17 +48,18 @@ const BoxUrls=({user,setUser,selectedGroup,setSelectedGroup})=>{
 
     return(
         <>
-            <ButtonGroup vertical>
+            <ButtonGroup vertical className='container-fluid'>
 
-                <Col>
+                {/* <Col> */}
                 {selectedGroup&&selectedGroup.urls.map(u=>
-                    <Col key={u._id}>
+                    <Button key={u._id} className='d-flex flex-start'>
                         <Button onClick={()=>removeUrl(u)}>Delete</Button>
                         {/* <Button onClick={()=>handleshowPutGroup(u._id)}>Update</Button> */}
                         <Button onClick={()=>window.open(u.url)}>{u.name}</Button> 
-                    </Col>
+                    </Button>
                 )}
                 {/* {showPutGroup==true&&
+                        <Button>
                             <Form>
                                 <Form.Group as={Button} className="mb-3" controlId="formBasicEmail">
                                 <Form.Control type="text" placeholder="New group name" onChange={(e)=>handleGroupNamePut(e)}/>
@@ -66,8 +67,9 @@ const BoxUrls=({user,setUser,selectedGroup,setSelectedGroup})=>{
                                 <Button onClick={()=>modifyGroup()}>save</Button>
                                 <Button onClick={()=>handleshowPutGroup()}>cancel</Button>
                             </Form>
+                        </Button>
                 }            */}
-                </Col>
+                {/* </Col> */}
 
                 <Col>
                 {showPostUrl==false
