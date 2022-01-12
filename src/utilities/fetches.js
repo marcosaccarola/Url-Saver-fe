@@ -140,7 +140,26 @@ export const postUrl=async({groupId,urlToPost,userId,setUser,setSelectedGroup})=
     }
 }
 //*______________________________________________ PUT URL
-
+export const putUrl=async({groupId,urlId,urlToPut,setSelectedGroup})=>{
+    console.log(groupId,urlId)
+    try {
+        const responsePutUrl=await fetch(URL_URL+`/${groupId}/${urlId}`,
+            {
+                method:'PUT',
+                body:JSON.stringify(urlToPut),
+                headers:{'Content-Type':'application/json'}
+            }
+        )
+        if(responsePutUrl.ok){
+            let updatedGroup=await responsePutUrl.json()
+            setSelectedGroup(updatedGroup)
+        }else{
+            console.log('Url not updated')
+        }
+    } catch (error) {
+        throw error
+    }
+}
 //*______________________________________________ DELETE URL
 export const deleteUrl=async({groupId,urlId,setSelectedGroup})=>{
     console.log(groupId,urlId)

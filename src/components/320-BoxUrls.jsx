@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { Button, ButtonGroup, Col, Form, Row } from 'react-bootstrap'
 import { FiDelete } from 'react-icons/fi'
-import { deleteUrl, postUrl } from '../utilities/fetches'
+import { RiSettingsLine } from 'react-icons/ri'
+import { deleteUrl, postUrl, putUrl } from '../utilities/fetches'
 import './000.css'
 
 const BoxUrls=({user,setUser,selectedGroup,setSelectedGroup})=>{
@@ -25,22 +26,27 @@ const BoxUrls=({user,setUser,selectedGroup,setSelectedGroup})=>{
             handleshowPostUrl()
         }
         //!__________________________________________ PUT GROUP
-        // const[showPutGroup,setshowPutGroup]=useState(false)
-        // const[GroupToPutId,setGroupToPutId]=useState()
-        // const handleshowPutGroup=(groupId)=>{
-        //     showPutGroup==false?setshowPutGroup(true):setshowPutGroup(false)
-        //     setGroupToPutId(groupId)
-        // }
-        // const[groupToPut,setgroupToPut]=useState()
-        // const handleGroupNamePut=(e)=>{
-        //     setgroupToPut(e.target.value)
-        // }
-        // const modifyGroup=()=>{
-        //     putGroup({"groupId":GroupToPutId,"userId":user._id,"groupToPut":{"name":groupToPut},setUser})
-        //     handleshowPutGroup()
-        //     setGroupToPutId()
-        //     setgroupToPut()
-        // }
+        const[showPutUrl,setshowPutUrl]=useState(false)
+        const[UrlToPut,setUrlToPut]=useState()
+        const handleshowPutUrl=(urlObj)=>{
+            showPutUrl==false?setshowPutUrl(true):setshowPutUrl(false)
+            setUrlToPut(urlObj)
+        }
+        const[urlNameToPut,setUrlNameToPut]=useState()
+        const handleUrlNamePut=(e)=>{
+            setUrlNameToPut(e.target.value)
+        }
+        const[urlUrlToPut,setUrlUrlToPut]=useState()
+        const handleUrlUrlPut=(e)=>{
+            setUrlUrlToPut(e.target.value)
+        }
+        const modifyUrl=()=>{
+            putUrl({"groupId":selectedGroup._id,"urlId":UrlToPut.id,"urlToPut":{"name":urlNameToPut,"url":urlUrlToPut},setSelectedGroup})
+            handleshowPutUrl()
+            setUrlToPut()
+            setUrlNameToPut()
+            setUrlUrlToPut()
+        }
         //!__________________________________________ DELETE URL
         const removeUrl=(u)=>{
             deleteUrl({"groupId":selectedGroup._id,"urlId":u.id,setSelectedGroup})
@@ -54,22 +60,23 @@ const BoxUrls=({user,setUser,selectedGroup,setSelectedGroup})=>{
                 {/* <Col> */}
                 {selectedGroup&&selectedGroup.urls.map(u=>
                     <Button key={u._id} className='d-flex'>
-                        {/* <Button onClick={()=>handleshowPutGroup(u._id)}>Update</Button> */}
                         <Button className='ms-auto' onClick={()=>window.open(u.url)}>{u.name}</Button> 
+                        <Button onClick={()=>handleshowPutUrl(u)} ><RiSettingsLine className='text-warning' size={20} /></Button>
                         <Button onClick={()=>removeUrl(u)}><FiDelete className='text-danger' size={20} /></Button>
                     </Button>
                 )}
-                {/* {showPutGroup==true&&
+                {showPutUrl==true&&
                         <Button>
                             <Form>
                                 <Form.Group as={Button} className="mb-3" controlId="formBasicEmail">
-                                <Form.Control type="text" placeholder="New group name" onChange={(e)=>handleGroupNamePut(e)}/>
+                                <Form.Control type="text" placeholder={UrlToPut.name} onChange={(e)=>handleUrlNamePut(e)}/>
+                                <Form.Control type="text" placeholder={UrlToPut.url} onChange={(e)=>handleUrlUrlPut(e)}/>
                                 </Form.Group>
-                                <Button onClick={()=>modifyGroup()}>save</Button>
-                                <Button onClick={()=>handleshowPutGroup()}>cancel</Button>
+                                <Button onClick={()=>modifyUrl()}>save</Button>
+                                <Button onClick={()=>handleshowPutUrl()}>cancel</Button>
                             </Form>
                         </Button>
-                }            */}
+                }           
                 {/* </Col> */}
 
                 <Col>
