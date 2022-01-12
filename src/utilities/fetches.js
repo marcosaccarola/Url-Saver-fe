@@ -42,6 +42,24 @@ export const login=async({email,pw,setUser})=>{
         throw error
     }
 }
+//*______________________________________________ GET GROUP
+// export const getGroup=async({groupId})=>{
+//     try {
+//         const responseGetGroup=await fetch(GROUP_URL+`/${groupId}`,
+//             {
+//                 method:'GET'
+//             }
+//         )
+//         if(responseGetGroup.ok){
+//             let group=await responseGetGroup.json()
+//             setSelectedGroup(group)
+//         }else{
+//             console.log('Group not getted')
+//         }
+//     } catch (error) {
+//         throw error
+//     }
+// }
 //*______________________________________________ POST GROUP
 export const postGroup=async({userId,groupToAdd,setUser})=>{
     try {

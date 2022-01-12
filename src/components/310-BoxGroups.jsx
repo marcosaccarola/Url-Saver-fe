@@ -6,6 +6,10 @@ import './000.css'
 
 const BoxGroups=({user,setUser,setSelectedGroup})=>{
     
+    //!__________________________________________ GET GROUP
+    // const loadGroupOfUrls=(g)=>{
+    //     getGroup(g._id)
+    // }
     //!__________________________________________ POST GROUP
     const[showPostGroup,setshowPostGroup]=useState(false)
     const handleshowPostGroup=()=>{
