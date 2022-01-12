@@ -1,7 +1,7 @@
 import { Dropdown } from 'bootstrap'
 import {useState} from 'react'
 import { Button, ButtonGroup, Col, DropdownButton, Form, Modal, Row } from 'react-bootstrap'
-import { deleteGroup, putGroup, postGroup } from '../utilities/fetches'
+import { deleteGroup, putGroup, postGroup, getGroup } from '../utilities/fetches'
 import './000.css'
 import {RiSettingsLine} from 'react-icons/ri'
 import {FiDelete} from 'react-icons/fi'
@@ -9,9 +9,9 @@ import {FiDelete} from 'react-icons/fi'
 const BoxGroups=({user,setUser,selectedGroup,setSelectedGroup})=>{
     
     //!__________________________________________ GET GROUP
-    // const loadGroupOfUrls=(g)=>{
-    //     getGroup(g._id)
-    // }
+    const loadGroupOfUrls=(g)=>{
+        getGroup({"groupId":g._id,setSelectedGroup})
+    }
     //!__________________________________________ POST GROUP
     const[showPostGroup,setshowPostGroup]=useState(false)
     const handleshowPostGroup=()=>{
@@ -76,11 +76,11 @@ const BoxGroups=({user,setUser,selectedGroup,setSelectedGroup})=>{
 
                 {/* <Col> */}
         {user&&user.groups.map(g=>
-                    <Button className='d-flex flex-start' onClick={()=>setSelectedGroup(g)}>
+                    <Button className='d-flex flex-start' onClick={()=>loadGroupOfUrls(g)}>
                     {/* <Col key={g._id}> */}
                         <Button onClick={()=>removeGroup(g)}><FiDelete className='text-danger' size={20} /></Button>
                         <Button onClick={()=>handleshowPutGroup(g)}><RiSettingsLine className='text-warning' size={20} /></Button>
-                        <Button onClick={()=>setSelectedGroup(g)}>{g.name}</Button> 
+                        <Button>{g.name}</Button> 
                         {/* </Col> */}
                     </Button>
         )}
