@@ -21,10 +21,12 @@ const Central=({user,setUser})=>{
                     user
                     ?
                         <>
-                        <Col sm={6} className='border border-light overY'>
+                        {/* border border-light */}
+                        <Col sm={6} className=' overY'>
                             <BoxGroups user={user} setUser={setUser} selectedGroup={selectedGroup} setSelectedGroup={setSelectedGroup} />
                         </Col>
-                        <Col sm={6} className='border border-light overY'>
+                        {/* border border-light */}
+                        <Col sm={6} className=' overY'>
                             <BoxUrls user={user} setUser={setUser} selectedGroup={selectedGroup} setSelectedGroup={setSelectedGroup} />
                         </Col>
                         </>
