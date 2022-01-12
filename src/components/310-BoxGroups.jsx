@@ -5,6 +5,7 @@ import { deleteGroup, putGroup, postGroup, getGroup } from '../utilities/fetches
 import './000.css'
 import {RiSettingsLine} from 'react-icons/ri'
 import {FiDelete} from 'react-icons/fi'
+import { FaRegSave } from 'react-icons/fa'
 
 const BoxGroups=({user,setUser,selectedGroup,setSelectedGroup})=>{
     
@@ -90,8 +91,8 @@ const BoxGroups=({user,setUser,selectedGroup,setSelectedGroup})=>{
                             <Form.Group as={Button} className="mb-3" controlId="formBasicEmail">
                             <Form.Control type="text" placeholder={selectedGroup.name} onChange={(e)=>handleGroupNamePut(e)}/>
                             </Form.Group>
-                            <Button onClick={()=>modifyGroup()}>save</Button>
-                            <Button onClick={()=>handleshowPutGroup()}>cancel</Button>
+                            <Button onClick={()=>modifyGroup()}><FaRegSave className='text-warning' size={20} /></Button>
+                            <Button onClick={()=>handleshowPutGroup()}><FiDelete className='text-danger' size={20} /></Button>
                         </Form>
                     </Button>
         }           

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Button, ButtonGroup, Col, Form, Row } from 'react-bootstrap'
 import { FiDelete } from 'react-icons/fi'
 import { RiSettingsLine } from 'react-icons/ri'
+import { FaRegSave } from 'react-icons/fa'
 import { deleteUrl, postUrl, putUrl } from '../utilities/fetches'
 import './000.css'
 
@@ -72,8 +73,8 @@ const BoxUrls=({user,setUser,selectedGroup,setSelectedGroup})=>{
                                 <Form.Control type="text" placeholder={UrlToPut.name} onChange={(e)=>handleUrlNamePut(e)}/>
                                 <Form.Control type="text" placeholder={UrlToPut.url} onChange={(e)=>handleUrlUrlPut(e)}/>
                                 </Form.Group>
-                                <Button onClick={()=>modifyUrl()}>save</Button>
-                                <Button onClick={()=>handleshowPutUrl()}>cancel</Button>
+                                <Button onClick={()=>modifyUrl()}><FaRegSave className='text-warning' size={20} /></Button>
+                                <Button onClick={()=>handleshowPutUrl()}><FiDelete className='text-light' size={20} /></Button>
                             </Form>
                         </Button>
                 }           
