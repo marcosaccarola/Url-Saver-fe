@@ -5,7 +5,7 @@ import './000.css'
 
 const BoxUrls=({user,setUser,selectedGroup,setSelectedGroup})=>{
 
-        //!__________________________________________ POST GROUP
+        //!__________________________________________ POST URL
         const[showPostUrl,setshowPostUrl]=useState(false)
         const handleshowPostUrl=()=>{
             showPostUrl==false?setshowPostUrl(true):setshowPostUrl(false)
@@ -40,9 +40,9 @@ const BoxUrls=({user,setUser,selectedGroup,setSelectedGroup})=>{
         //     setGroupToPutId()
         //     setgroupToPut()
         // }
-        //!__________________________________________ DELETE GROUP
+        //!__________________________________________ DELETE URL
         const removeUrl=(u)=>{
-            deleteUrl({"groupId":selectedGroup._id,"urlId":u._id,setSelectedGroup})
+            deleteUrl({"groupId":selectedGroup._id,"urlId":u.id,setSelectedGroup})
         }
 
 

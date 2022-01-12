@@ -120,8 +120,9 @@ export const deleteGroup=async({groupId,userId,setUser})=>{
 }
 //*______________________________________________ POST URL
 export const postUrl=async({groupId,urlToPost,userId,setUser,setSelectedGroup})=>{
+    console.log(URL_URL+`/${groupId}`)
     try {
-        const responsePostUrl=await fetch(URL_URL+`/${groupId}/${userId}`,
+        const responsePostUrl=await fetch(URL_URL+`/${groupId}`,
         {
             method:'POST',
             body:JSON.stringify(urlToPost),
