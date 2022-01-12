@@ -3,8 +3,10 @@ import {useState} from 'react'
 import { Button, ButtonGroup, Col, DropdownButton, Form, Modal, Row } from 'react-bootstrap'
 import { deleteGroup, putGroup, postGroup } from '../utilities/fetches'
 import './000.css'
+import {RiSettingsLine} from 'react-icons/ri'
+import {FiDelete} from 'react-icons/fi'
 
-const BoxGroups=({user,setUser,setSelectedGroup})=>{
+const BoxGroups=({user,setUser,selectedGroup,setSelectedGroup})=>{
     
     //!__________________________________________ GET GROUP
     // const loadGroupOfUrls=(g)=>{
@@ -27,9 +29,10 @@ const BoxGroups=({user,setUser,setSelectedGroup})=>{
     //!__________________________________________ PUT GROUP
     const[showPutGroup,setshowPutGroup]=useState(false)
     const[GroupToPutId,setGroupToPutId]=useState()
-    const handleshowPutGroup=(groupId)=>{
+    const handleshowPutGroup=(group)=>{
         showPutGroup==false?setshowPutGroup(true):setshowPutGroup(false)
-        setGroupToPutId(groupId)
+        setGroupToPutId(group._id)
+        setSelectedGroup(group)
     }
     const[groupToPut,setgroupToPut]=useState()
     const handleGroupNamePut=(e)=>{
@@ -69,26 +72,30 @@ const BoxGroups=({user,setUser,setSelectedGroup})=>{
                 </Row> */}
 
             {/* BUTTON GROUP */}
-            <ButtonGroup vertical>
+            <ButtonGroup vertical className='container-fluid'>
 
-                <Col>
+                {/* <Col> */}
         {user&&user.groups.map(g=>
-                    <Col key={g._id}>
-                        <Button onClick={()=>removeGroup(g)}>Delete</Button>
-                        <Button onClick={()=>handleshowPutGroup(g._id)}>Update</Button>
+                    <Button className='d-flex flex-start' onClick={()=>setSelectedGroup(g)}>
+                    {/* <Col key={g._id}> */}
+                        <Button onClick={()=>removeGroup(g)}><FiDelete className='text-danger' size={20} /></Button>
+                        <Button onClick={()=>handleshowPutGroup(g)}><RiSettingsLine className='text-warning' size={20} /></Button>
                         <Button onClick={()=>setSelectedGroup(g)}>{g.name}</Button> 
-                    </Col>
+                        {/* </Col> */}
+                    </Button>
         )}
         {showPutGroup==true&&
-                            <Form>
-                                <Form.Group as={Button} className="mb-3" controlId="formBasicEmail">
-                                <Form.Control type="text" placeholder="New group name" onChange={(e)=>handleGroupNamePut(e)}/>
-                                </Form.Group>
-                                <Button onClick={()=>modifyGroup()}>save</Button>
-                                <Button onClick={()=>handleshowPutGroup()}>cancel</Button>
-                            </Form>
+                    <Button>
+                        <Form>
+                            <Form.Group as={Button} className="mb-3" controlId="formBasicEmail">
+                            <Form.Control type="text" placeholder={selectedGroup.name} onChange={(e)=>handleGroupNamePut(e)}/>
+                            </Form.Group>
+                            <Button onClick={()=>modifyGroup()}>save</Button>
+                            <Button onClick={()=>handleshowPutGroup()}>cancel</Button>
+                        </Form>
+                    </Button>
         }           
-                </Col>
+                {/* </Col> */}
 
                 <Col>
         {showPostGroup==false
