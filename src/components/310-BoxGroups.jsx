@@ -76,7 +76,7 @@ const BoxGroups=({user,setUser,selectedGroup,setSelectedGroup})=>{
 
                 {/* <Col> */}
         {user&&user.groups.map(g=>
-                    <Button className='d-flex flex-start' onClick={()=>loadGroupOfUrls(g)}>
+                    <Button className='d-flex' onClick={()=>loadGroupOfUrls(g)}>
                     {/* <Col key={g._id}> */}
                         <Button onClick={()=>removeGroup(g)}><FiDelete className='text-danger' size={20} /></Button>
                         <Button onClick={()=>handleshowPutGroup(g)}><RiSettingsLine className='text-warning' size={20} /></Button>

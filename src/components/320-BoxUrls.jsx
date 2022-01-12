@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Button, ButtonGroup, Col, Form, Row } from 'react-bootstrap'
+import { FiDelete } from 'react-icons/fi'
 import { deleteUrl, postUrl } from '../utilities/fetches'
 import './000.css'
 
@@ -52,10 +53,10 @@ const BoxUrls=({user,setUser,selectedGroup,setSelectedGroup})=>{
 
                 {/* <Col> */}
                 {selectedGroup&&selectedGroup.urls.map(u=>
-                    <Button key={u._id} className='d-flex flex-start'>
-                        <Button onClick={()=>removeUrl(u)}>Delete</Button>
+                    <Button key={u._id} className='d-flex'>
                         {/* <Button onClick={()=>handleshowPutGroup(u._id)}>Update</Button> */}
-                        <Button onClick={()=>window.open(u.url)}>{u.name}</Button> 
+                        <Button className='ms-auto' onClick={()=>window.open(u.url)}>{u.name}</Button> 
+                        <Button onClick={()=>removeUrl(u)}><FiDelete className='text-danger' size={20} /></Button>
                     </Button>
                 )}
                 {/* {showPutGroup==true&&
