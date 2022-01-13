@@ -11,7 +11,6 @@ const Login=({setUser})=>{
     const[pw,setPw]=useState()
     const loginUser=()=>{
         login({email,pw,setUser})
-        console.log({email,pw})
     }
     const registerUser=()=>{
         register({email,pw,setUser})
@@ -34,6 +33,9 @@ const Login=({setUser})=>{
                         <Form.Control type="password" placeholder="Password" onChange={(e)=>setPw(e.target.value)} />
                     </Form.Group>
 
+        {isUserRegistered==true
+                ?
+                    <>
                     <Form.Group>
                         <Button variant="primary" type="submit" onClick={loginUser}>
                             Login
@@ -41,8 +43,22 @@ const Login=({setUser})=>{
                     </Form.Group>
 
                     <Form.Text className="text-muted hover" onClick={handleSetIsUserRegistered}>
-                        Are you not already registered? Click here to sign in.
+                        Are you not registered yet? Click here to sign in.
                     </Form.Text>
+                    </>
+                :
+                    <>
+                    <Form.Group>
+                        <Button variant="success" type="submit" onClick={registerUser}>
+                            Signin
+                        </Button>
+                    </Form.Group>
+
+                    <Form.Text className="text-muted hover" onClick={handleSetIsUserRegistered}>
+                        Are you registered? Back to login page.
+                    </Form.Text>
+                    </>
+        }
                 </Form>
             </Col>
         </Row>

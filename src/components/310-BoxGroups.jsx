@@ -76,7 +76,7 @@ const BoxGroups=({user,setUser,selectedGroup,setSelectedGroup})=>{
         {showPostGroup==false
                 ?
                     <Col className='mt-2'>
-                        <Button onClick={()=>handleshowPostGroup()}>add Group</Button>
+                        <Button onClick={()=>handleshowPostGroup()}>add Container</Button>
                     </Col>
                 :
                     <Button>

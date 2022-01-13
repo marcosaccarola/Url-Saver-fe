@@ -4,8 +4,9 @@ const URL_URL='http://localhost:3001/url'
 
 //*______________________________________________ REGISTER USER
 export const register=async({email,pw,setUser})=>{
+    console.log(email,pw)
     try {
-        const responseRegister=await fetch(USER_URL,
+        const responseRegister=await fetch(USER_URL+'/register',
             {
                 method:'POST',
                 body:JSON.stringify({email,pw}),
@@ -16,7 +17,7 @@ export const register=async({email,pw,setUser})=>{
                 setUser(user)
                 console.log(user)
             }else{
-                console.log('User not found.')
+                console.log('User not registered.')
             }
     } catch (error) {
         throw error
