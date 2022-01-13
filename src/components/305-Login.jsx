@@ -1,12 +1,16 @@
 import { useState } from "react"
-import { Button, Col, Form, Row } from "react-bootstrap"
+import { Button, Col, Container, Form, Row } from "react-bootstrap"
 import { login, register } from "../utilities/fetches"
 
 const Login=({setUser})=>{
+    const[isUserRegistered,setisUserRegistered]=useState(true)
+    const handleSetIsUserRegistered=()=>{
+        isUserRegistered==true?setisUserRegistered(false):setisUserRegistered(true)
+    }
     const[email,setEmail]=useState()
     const[pw,setPw]=useState()
     const loginUser=()=>{
-        // login({email,pw,setUser})
+        login({email,pw,setUser})
         console.log({email,pw})
     }
     const registerUser=()=>{
@@ -14,7 +18,7 @@ const Login=({setUser})=>{
     }
     
     return(
-        <Row className='justify-content-center'>
+        <Row className='justify-content-center text-light'>
             <Col sm={6}>
                 <Form>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -30,18 +34,15 @@ const Login=({setUser})=>{
                         <Form.Control type="password" placeholder="Password" onChange={(e)=>setPw(e.target.value)} />
                     </Form.Group>
 
-                    <Row>
-                        <Col sm={6}>
-                            <Button variant="primary" type="submit" onClick={loginUser}>
-                                Login
-                            </Button>
-                        </Col>
-                        <Col sm={6}>
-                            <Button variant="primary" type="submit" onClick={registerUser}>
-                                Signin
-                            </Button>
-                        </Col>
-                    </Row>
+                    <Form.Group>
+                        <Button variant="primary" type="submit" onClick={loginUser}>
+                            Login
+                        </Button>
+                    </Form.Group>
+
+                    <Form.Text className="text-muted hover" onClick={handleSetIsUserRegistered}>
+                        Are you not already registered? Click here to sign in.
+                    </Form.Text>
                 </Form>
             </Col>
         </Row>

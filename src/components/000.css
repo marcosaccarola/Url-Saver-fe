@@ -42,3 +42,6 @@
 /* .outlineOpenInNew {
   margin: 6px 12px 12px 6px;
 } */
+.hover:hover {
+  background-color: yellow;
+}

@@ -9,8 +9,7 @@ const Central=({user,setUser})=>{
     const[selectedGroup,setSelectedGroup]=useState()
 
     return(
-        <Container fluid>
-            <Row className='vw-100'>
+        <Container fluid className='row'>
 
                 <Col sm={1} className=''>                    
                 </Col>
@@ -29,7 +28,7 @@ const Central=({user,setUser})=>{
                         </Col>
                         </>
                     :
-                        <Col sm={12} className='bg-light my-auto'>
+                        <Col sm={12} className='my-auto'>
                             <Login setUser={setUser} />
                         </Col>                  
                     }
@@ -39,7 +38,6 @@ const Central=({user,setUser})=>{
                 <Col sm={1} className=''>
                 </Col>
 
-            </Row>
         </Container>
     )
 }
