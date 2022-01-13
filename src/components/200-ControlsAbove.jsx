@@ -5,11 +5,7 @@ const ControlsAbove=()=>{
 
     return(
         <Container fluid className='controls-above'>
-            {/* <Row>
-                <Col className='mt-3'>Containers</Col>
-                <Col></Col>
-                <Col className='mt-3'>related Urls</Col>
-            </Row> */}
+
         </Container>
     )
 }

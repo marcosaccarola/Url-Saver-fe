@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { Container } from 'react-bootstrap'
 import { login } from '../utilities/fetches'
 import './000.css'
 import Bar from './100-Bar'
@@ -11,7 +10,7 @@ const Home=()=>{
     const[user,setUser]=useState()
 
     useEffect(() => {
-        // login({"email":"2ndTest@email.com","pw":"1234Test!",setUser})
+        login({"email":"2ndTest@email.com","pw":"1234Test!",setUser})
     },[])
 
     return(

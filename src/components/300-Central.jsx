@@ -21,11 +21,9 @@ const Central=({user,setUser})=>{
                     user
                     ?
                         <>
-                        {/* border border-light */}
                         <Col sm={6} className=' overY'>
                             <BoxGroups user={user} setUser={setUser} selectedGroup={selectedGroup} setSelectedGroup={setSelectedGroup} />
                         </Col>
-                        {/* border border-light */}
                         <Col sm={6} className=' overY'>
                             <BoxUrls user={user} setUser={setUser} selectedGroup={selectedGroup} setSelectedGroup={setSelectedGroup} />
                         </Col>

@@ -1,6 +1,5 @@
-import { Dropdown } from 'bootstrap'
 import {useState} from 'react'
-import { Button, ButtonGroup, Col, DropdownButton, Form, Modal, Row } from 'react-bootstrap'
+import { Button, ButtonGroup, Col, Form} from 'react-bootstrap'
 import { deleteGroup, putGroup, postGroup, getGroup } from '../utilities/fetches'
 import './000.css'
 import {RiSettingsLine} from 'react-icons/ri'
@@ -52,37 +51,13 @@ const BoxGroups=({user,setUser,selectedGroup,setSelectedGroup})=>{
 
     return(
         <>
-
-            {/* ROWS & COLS
-            {user&&user.groups.map(g=>
-                <Row key={g._id}>
-                    <Col sm={12} className='text-start'>
-                        <span 
-                            className='container border border-light text-light' 
-                            onClick={()=>setSelectedGroup(g)}
-                            >{g.name}</span>
-                    </Col>
-                </Row>
-            )}
-                <Row>
-                    <Col sm={12} className='text-start'>
-                        <span 
-                            className='container text-muted'
-                            onClick={()=>addContainer()}>add group</span>
-                    </Col>
-                </Row> */}
-
-            {/* BUTTON GROUP */}
             <ButtonGroup vertical className='container-fluid'>
 
-                {/* <Col> */}
         {user&&user.groups.map(g=>
-                    <Button className='d-flex' onClick={()=>loadGroupOfUrls(g)}>
-                    {/* <Col key={g._id}> */}
+                    <Button key={g._id} className='d-flex' onClick={()=>loadGroupOfUrls(g)}>
                         <Button onClick={()=>removeGroup(g)}><FiDelete className='text-danger' size={20} /></Button>
                         <Button onClick={()=>handleshowPutGroup(g)}><RiSettingsLine className='text-warning' size={20} /></Button>
                         <Button>{g.name}</Button> 
-                        {/* </Col> */}
                     </Button>
         )}
         {showPutGroup==true&&
@@ -96,7 +71,7 @@ const BoxGroups=({user,setUser,selectedGroup,setSelectedGroup})=>{
                         </Form>
                     </Button>
         }           
-                {/* </Col> */}
+
 
                 <Col>
         {showPostGroup==false
