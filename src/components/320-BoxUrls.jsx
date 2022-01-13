@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { Button, ButtonGroup, Col, Form } from 'react-bootstrap'
-import { FiDelete } from 'react-icons/fi'
+import { MdOutlineOpenInNew } from 'react-icons/md'
 import { RiSettingsLine } from 'react-icons/ri'
+import { FiDelete } from 'react-icons/fi'
 import { FaRegSave } from 'react-icons/fa'
 import { deleteUrl, postUrl, putUrl } from '../utilities/fetches'
 import './000.css'
@@ -59,40 +60,42 @@ const BoxUrls=({user,setUser,selectedGroup,setSelectedGroup})=>{
 
         {selectedGroup&&selectedGroup.urls.map(u=>
                     <Button key={u.id} className='d-flex'>
-                        <Button className='ms-auto' onClick={()=>window.open(u.url)}>{u.name}</Button> 
+                        <Button className='ms-auto' onClick={()=>window.open(u.url)}>{u.name}<MdOutlineOpenInNew className='text-light ms-5' size={20} /></Button> 
                         <Button onClick={()=>handleshowPutUrl(u)} ><RiSettingsLine className='text-warning' size={20} /></Button>
                         <Button onClick={()=>removeUrl(u)}><FiDelete className='text-danger' size={20} /></Button>
                     </Button>
         )}
 
         {showPutUrl==true&&
-                        <Button>
-                            <Form>
-                                <Form.Group as={Button} className="mb-3" controlId="formBasicEmail">
-                                <Form.Control type="text" placeholder={UrlToPut.name} onChange={(e)=>handleUrlNamePut(e)}/>
-                                <Form.Control type="text" placeholder={UrlToPut.url} onChange={(e)=>handleUrlUrlPut(e)}/>
-                                </Form.Group>
-                                <Button onClick={()=>modifyUrl()}><FaRegSave className='text-warning' size={20} /></Button>
-                                <Button onClick={()=>handleshowPutUrl()}><FiDelete className='text-light' size={20} /></Button>
-                            </Form>
-                        </Button>
+                    <Button>
+                        <Form>
+                            <Form.Group as={Button} className="mb-3" controlId="formBasicEmail">
+                            <Form.Control type="text" placeholder={UrlToPut.name} onChange={(e)=>handleUrlNamePut(e)}/>
+                            <Form.Control type="text" placeholder={UrlToPut.url} onChange={(e)=>handleUrlUrlPut(e)}/>
+                            </Form.Group>
+                            <Button onClick={()=>modifyUrl()}><FaRegSave className='text-warning' size={20} /></Button>
+                            <Button onClick={()=>handleshowPutUrl()}><FiDelete className='text-light' size={20} /></Button>
+                        </Form>
+                    </Button>
         }           
 
-                <Col>
         {showPostUrl==false
                 ?
-                    <Button onClick={()=>handleshowPostUrl()}>add Url</Button>
+                    <Col className='mt-2 ms-auto'>
+                        <Button onClick={()=>handleshowPostUrl()}>add Url</Button>
+                    </Col>
                 :
-                    <Form>
-                        <Form.Group as={Button} className="mb-3" controlId="formBasicEmail">
-                        <Form.Control type="text" placeholder="Link name" onChange={(e)=>handleLinkNameToPost(e)}/>
-                        <Form.Control type="text" placeholder="Url" onChange={(e)=>handleLinkUrlToPost(e)}/>
-                        </Form.Group>
-                        <Button onClick={()=>addUrl()}>save</Button>
-                        <Button onClick={()=>handleshowPostUrl()}>cancel</Button>
-                    </Form>
+                    <Button>
+                        <Form>
+                            <Form.Group as={Button} className="mb-3" controlId="formBasicEmail">
+                            <Form.Control type="text" placeholder="Link name" onChange={(e)=>handleLinkNameToPost(e)}/>
+                            <Form.Control type="text" placeholder="Url" onChange={(e)=>handleLinkUrlToPost(e)}/>
+                            </Form.Group>
+                            <Button onClick={()=>addUrl()}><FaRegSave className='text-warning' size={20} /></Button>
+                            <Button onClick={()=>handleshowPostUrl()}><FiDelete className='text-danger' size={20} /></Button>
+                        </Form>
+                    </Button>
         }
-                </Col>
 
             </ButtonGroup>
         </>

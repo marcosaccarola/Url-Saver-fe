@@ -57,7 +57,7 @@ const BoxGroups=({user,setUser,selectedGroup,setSelectedGroup})=>{
                     <Button key={g._id} className='d-flex' onClick={()=>loadGroupOfUrls(g)}>
                         <Button onClick={()=>removeGroup(g)}><FiDelete className='text-danger' size={20} /></Button>
                         <Button onClick={()=>handleshowPutGroup(g)}><RiSettingsLine className='text-warning' size={20} /></Button>
-                        <Button>{g.name}</Button> 
+                        <Button className='px-4' >{g.name}</Button> 
                     </Button>
         )}
         {showPutGroup==true&&
@@ -73,20 +73,22 @@ const BoxGroups=({user,setUser,selectedGroup,setSelectedGroup})=>{
         }           
 
 
-                <Col>
         {showPostGroup==false
-        ?
-                    <Button onClick={()=>handleshowPostGroup()}>add Group</Button>
-        :
-                    <Form>
-                        <Form.Group as={Button} className="mb-3" controlId="formBasicEmail">
-                        <Form.Control type="text" placeholder="Group name" onChange={(e)=>handleGroupNamePost(e)}/>
-                        </Form.Group>
-                        <Button onClick={()=>addGroup()}>save</Button>
-                        <Button onClick={()=>handleshowPostGroup()}>cancel</Button>
-                    </Form>
+                ?
+                    <Col className='mt-2'>
+                        <Button onClick={()=>handleshowPostGroup()}>add Group</Button>
+                    </Col>
+                :
+                    <Button>
+                        <Form>
+                            <Form.Group as={Button} className="mb-3" controlId="formBasicEmail">
+                            <Form.Control type="text" placeholder="Group name" onChange={(e)=>handleGroupNamePost(e)}/>
+                            </Form.Group>
+                            <Button onClick={()=>addGroup()}><FaRegSave className='text-warning' size={20} /></Button>
+                            <Button onClick={()=>handleshowPostGroup()}><FiDelete className='text-danger' size={20} /></Button>
+                        </Form>
+                    </Button>
         }
-                </Col>
 
             </ButtonGroup>
 
