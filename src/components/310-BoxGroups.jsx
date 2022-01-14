@@ -57,21 +57,21 @@ const BoxGroups=({user,setUser,selectedGroup,setSelectedGroup})=>{
                     <Button key={g._id} className='d-flex' onClick={()=>loadGroupOfUrls(g)}>
                         <Button onClick={()=>removeGroup(g)}><FiDelete className='text-danger' size={20} /></Button>
                         <Button onClick={()=>handleshowPutGroup(g)}><RiSettingsLine className='text-warning' size={20} /></Button>
-                        <Button className='px-4' >{g.name}</Button> 
+                        <Button className='px-4 btn-containerName' >{g.name}</Button> 
                     </Button>
         )}
+
         {showPutGroup==true&&
                     <Button>
                         <Form>
                             <Form.Group as={Button} className="mb-3" controlId="formBasicEmail">
-                            <Form.Control type="text" placeholder={selectedGroup.name} onChange={(e)=>handleGroupNamePut(e)}/>
+                            <Form.Control type="text" placeholder={selectedGroup.name} onChange={(e)=>handleGroupNamePut(e)} />
                             </Form.Group>
                             <Button onClick={()=>modifyGroup()}><FaRegSave className='text-warning' size={20} /></Button>
                             <Button onClick={()=>handleshowPutGroup()}><FiDelete className='text-danger' size={20} /></Button>
                         </Form>
                     </Button>
         }           
-
 
         {showPostGroup==false
                 ?

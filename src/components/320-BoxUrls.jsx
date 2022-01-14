@@ -81,8 +81,10 @@ const BoxUrls=({user,setUser,selectedGroup,setSelectedGroup})=>{
 
         {showPostUrl==false
                 ?
-                    <Col className='mt-2 ms-auto'>
-                        <Button onClick={()=>handleshowPostUrl()}>add Url to Container</Button>
+                    <Col className={selectedGroup&&selectedGroup.urls.length!==0?'mt-2 me-auto':'me-auto'}>
+                        <Button onClick={()=>handleshowPostUrl()} className={user.groups.length==0?'button-muted':selectedGroup?'button-primary':'button-muted'}>
+                            {user.groups.length==0?'waiting for a Container':selectedGroup?'add Url to Container':'please choose a Container'}
+                        </Button>
                     </Col>
                 :
                     <Button>

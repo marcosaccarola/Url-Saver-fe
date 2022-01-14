@@ -9,10 +9,12 @@ const Login=({setUser})=>{
     }
     const[email,setEmail]=useState()
     const[pw,setPw]=useState()
-    const loginUser=()=>{
+    const loginUser=(e)=>{
+        e.preventDefault()
         login({email,pw,setUser})
     }
-    const registerUser=()=>{
+    const registerUser=(e)=>{
+        e.preventDefault()
         register({email,pw,setUser})
     }
     
@@ -37,7 +39,7 @@ const Login=({setUser})=>{
                 ?
                     <>
                     <Form.Group>
-                        <Button variant="primary" type="submit" onClick={loginUser}>
+                        <Button variant="primary" type="submit" onClick={(e)=>loginUser(e)}>
                             Login
                         </Button>
                     </Form.Group>
@@ -49,7 +51,7 @@ const Login=({setUser})=>{
                 :
                     <>
                     <Form.Group>
-                        <Button variant="success" type="submit" onClick={registerUser}>
+                        <Button variant="success" type="submit" onClick={(e)=>registerUser(e)}>
                             Signin
                         </Button>
                     </Form.Group>
