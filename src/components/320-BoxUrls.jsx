@@ -26,7 +26,7 @@ const BoxUrls=({user,setUser,selectedGroup,setSelectedGroup})=>{
             postUrl({"groupId":selectedGroup._id,"urlToPost":{"name":nameToPost,"url":urlToPost},"userId":user._id,setUser,setSelectedGroup})
             handleshowPostUrl()
         }
-        //!__________________________________________ PUT GROUP
+        //!__________________________________________ PUT URL
         const[showPutUrl,setshowPutUrl]=useState(false)
         const[UrlToPut,setUrlToPut]=useState()
         const handleshowPutUrl=(urlObj)=>{

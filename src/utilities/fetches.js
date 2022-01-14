@@ -14,7 +14,7 @@ export const register=async({email,pw,setUser})=>{
             })
             if(responseRegister.ok){
                 let user=await responseRegister.json()
-                setUser(user)
+                // setUser(user)
                 console.log(user)
             }else{
                 console.log('User not registered.')
