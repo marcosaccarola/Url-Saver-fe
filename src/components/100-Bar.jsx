@@ -10,7 +10,7 @@ const Bar=({user,setUser})=>{
 
             <Navbar bg="light" variant="" >
                 <Container>
-                    <Navbar.Brand href="#home">
+                    <Navbar.Brand href="#">
                         <AiFillContainer size={40} className='me-3' />
                         Urls Containers
                     </Navbar.Brand>

@@ -50,3 +50,19 @@
 .btn-containerName:hover {
   background-color: #0d6efd;
 }
+/*This is modifying the btn-primary colors but you could create your own .btn-something class as well*/
+.btn-secondary {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d; /*set the color you want here*/
+}
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-secondary:active,
+.btn-secondary.active,
+.open > .dropdown-toggle.btn-secondary {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+  /*set the color you want here*/
+}

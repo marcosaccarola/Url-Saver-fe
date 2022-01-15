@@ -79,14 +79,8 @@ const BoxUrls=({user,setUser,selectedGroup,setSelectedGroup})=>{
                     </Button>
         }           
 
-        {showPostUrl==false
+        {selectedGroup&&showPostUrl==true
                 ?
-                    <Col className={selectedGroup&&selectedGroup.urls.length!==0?'mt-2 me-auto':'me-auto'}>
-                        <Button onClick={()=>handleshowPostUrl()} className={user.groups.length==0?'btn-secondary':selectedGroup?'btn-primary':'btn-secondary'}>
-                            {user.groups.length==0?'please add a Container':selectedGroup?'add Url to Container':'please choose a Container'}
-                        </Button>
-                    </Col>
-                :
                     <Button>
                         <Form>
                             <Form.Group as={Button} className="mb-3" controlId="formBasicEmail">
@@ -97,6 +91,12 @@ const BoxUrls=({user,setUser,selectedGroup,setSelectedGroup})=>{
                             <Button onClick={()=>handleshowPostUrl()}><FiDelete className='text-danger' size={20} /></Button>
                         </Form>
                     </Button>
+                :
+                    <Col className={selectedGroup&&selectedGroup.urls.length!==0?'mt-2 me-auto':'me-auto'}>
+                        <Button onClick={()=>handleshowPostUrl()} className={user.groups.length==0?'btn-secondary':selectedGroup?'btn-primary':'btn-secondary'}>
+                            {user.groups.length==0?'please add a Container':selectedGroup?'add Url to Container':'please choose a Container'}
+                        </Button>
+                    </Col>
         }
 
             </ButtonGroup>
