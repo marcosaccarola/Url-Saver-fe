@@ -11,7 +11,7 @@ const Central=({user,setUser})=>{
     return(
         <Container fluid className='row'>
 
-                <Col sm={1} className=''>                    
+                <Col sm={1} className='' onClick={()=>setSelectedGroup()}>                    
                 </Col>
 
                 <Col sm={10}>
@@ -35,7 +35,7 @@ const Central=({user,setUser})=>{
                     </Row>
                 </Col>
 
-                <Col sm={1} className=''>
+                <Col sm={1} className='' onClick={()=>setSelectedGroup()}>
                 </Col>
 
         </Container>
