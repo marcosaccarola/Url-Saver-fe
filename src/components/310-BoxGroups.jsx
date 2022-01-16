@@ -57,33 +57,36 @@ const BoxGroups=({user,setUser,selectedGroup,setSelectedGroup})=>{
 
 {/* MAP OF CONTAINERS */}
         {user&&user.groups.map(g=>
+                <>
                     <Button key={g._id} className='d-flex' onClick={()=>loadGroupOfUrls(g)}>
                         <Button onClick={()=>removeGroup(g)}><FiDelete className='text-danger' size={20} /></Button>
                         <Button onClick={()=>handleshowPutGroup(g)}><RiSettingsLine className='text-warning' size={20} /></Button>
                         <Button className='px-4 btn-containerName' >{g.name}</Button> 
                     </Button>
+                </>
         )}
 
-{/* UPDATE CONTAINER */}
+{/* UPDATE CONTAINER FORM */}
         {showPutGroup==true&&
+                <>
                     <Button>
                         <Form>
-                            <Form.Group as={Button} className="mb-3" controlId="formBasicEmail">
-                            <Form.Control type="text" placeholder={selectedGroup.name} onChange={(e)=>handleGroupNamePut(e)} />
+                            <Form.Group as={Button} className="mb-3" controlId="formBasicEmail" className='btn-containerName container'>
+                                <Form.Control type="text" placeholder={selectedGroup.name} onChange={(e)=>handleGroupNamePut(e)} />
                             </Form.Group>
-                            <Button onClick={()=>modifyGroup()}><FaRegSave className='text-warning' size={20} /></Button>
-                            <Button onClick={()=>handleshowPutGroup()}><FiDelete className='text-danger' size={20} /></Button>
+                            {/* <Button onClick={()=>modifyGroup()}><FaRegSave className='text-warning' size={20} /></Button> */}
+                            {/* <Button onClick={()=>handleshowPutGroup()}><FiDelete className='text-danger' size={20} /></Button> */}
                         </Form>
                     </Button>
+                    <Col className='mt-2'>
+                        <Button onClick={()=>handleshowPutGroup()} className=''>cancel</Button>
+                        <Button onClick={()=>modifyGroup()} className=''>Modify</Button>
+                    </Col>
+                </>
         }           
 
-{/* ADD A CONTAINER */}
-        {showPostGroup==false
-                ?
-                    <Col className='mt-2'>
-                        <Button onClick={()=>handleshowPostGroup()}>add Container</Button>
-                    </Col>
-                :
+{/* ADD CONTAINER FORM */}
+        {showPostGroup==true&&  
                 <>
                     <Button>
                         <Form className='d-flex'>
@@ -101,8 +104,14 @@ const BoxGroups=({user,setUser,selectedGroup,setSelectedGroup})=>{
                 </>
         }
 
-            </ButtonGroup>
+{/* ADD CONTAINER BUTTON */}
+        {showPutGroup===false&&showPostGroup===false&&
+                    <Col className='mt-2'>
+                        <Button onClick={()=>handleshowPostGroup()}>add Container</Button>
+                    </Col>
+        }
 
+            </ButtonGroup>
         </>
     )
 }

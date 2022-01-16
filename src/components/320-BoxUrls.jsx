@@ -60,7 +60,7 @@ const BoxUrls=({user,setUser,selectedGroup,setSelectedGroup})=>{
 
         {selectedGroup&&selectedGroup.urls.map(u=>
                     <Button key={u.id} className='d-flex'>
-                        <Button className='ms-auto' onClick={()=>window.open(u.url)}>{u.name}<MdOutlineOpenInNew className='text-light ms-5' size={20} /></Button> 
+                        <Button className='ms-auto btn-containerNameOnFire' onClick={()=>window.open(u.url)}>{u.name}<MdOutlineOpenInNew className='text-light ms-5' size={20} /></Button> 
                         <Button onClick={()=>handleshowPutUrl(u)} ><RiSettingsLine className='text-warning' size={20} /></Button>
                         <Button onClick={()=>removeUrl(u)}><FiDelete className='text-danger' size={20} /></Button>
                     </Button>

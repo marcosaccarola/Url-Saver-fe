@@ -50,6 +50,10 @@
 .btn-containerName:hover {
   background-color: #0d6efd;
 }
+.btn-containerNameOnFire:hover {
+  background-color: #dc3545;
+}
+
 /*This is modifying the btn-primary colors but you could create your own .btn-something class as well*/
 .btn-secondary {
   color: #fff;
