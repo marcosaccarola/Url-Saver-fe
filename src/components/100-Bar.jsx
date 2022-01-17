@@ -1,6 +1,6 @@
 import { Container, Navbar, NavDropdown} from 'react-bootstrap'
 import './000.css'
-import { FiUserCheck } from "react-icons/fi"
+import { FiUserX,FiUserCheck } from "react-icons/fi"
 import {AiFillContainer} from 'react-icons/ai'
 
 const Bar=({user,setUser})=>{
@@ -33,7 +33,7 @@ const Bar=({user,setUser})=>{
                 :
                     <Navbar.Brand className='text-danger'>
                         Login or Signin
-                        <FiUserCheck size={40} className='ms-3'/>
+                        <FiUserX size={40} className='ms-3'/>
                     </Navbar.Brand>
                 }
                 </Container>
