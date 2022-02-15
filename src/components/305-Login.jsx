@@ -37,15 +37,10 @@ const Login=({setUser})=>{
                     <>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Login with email</Form.Label>
-                        {/* <Form.Label>Email address</Form.Label> */}
                         <Form.Control type="email" placeholder="Enter email" onChange={(e)=>setEmail(e.target.value)} />
-                        {/* <Form.Text className="text-muted">
-                        We'll never share your email with anyone else.
-                        </Form.Text> */}
                     </Form.Group>
 
                     <Form.Group className="mb-1" controlId="formBasicPassword">
-                        {/* <Form.Label>Password</Form.Label> */}
                         <Form.Control type="password" placeholder="Password" onChange={(e)=>setPw(e.target.value)} />
                     </Form.Group>
                     </>

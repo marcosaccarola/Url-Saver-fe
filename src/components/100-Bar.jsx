@@ -27,7 +27,6 @@ const Bar=({user,setUser})=>{
                             <NavDropdown.Divider />
                             <NavDropdown.Item href="#action/3.4">Logout</NavDropdown.Item>
                         </NavDropdown>
-                        {/* <FiUserCheck size={40} className='ms-3' /> */}
                     </Navbar.Brand>
                 </>
                 :

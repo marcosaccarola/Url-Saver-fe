@@ -7,7 +7,6 @@
 
 /*? _____________________________________________ ABOVE */
 .controls-above {
-  /* background: grey; */
   height: 8vh;
 }
 
@@ -18,13 +17,11 @@
 
 /*? _____________________________________________ BELOW */
 .controls-below {
-  /* background: grey; */
   height: 8vh;
 }
 
 /*? _____________________________________________ MAIN (CENTRAL) */
 .central {
-  /* background: honeydew; */
   height: 76vh;
 }
 .box-groups {
@@ -39,9 +36,6 @@
   overflow-x: hidden;
   max-height: 76vh;
 }
-/* .outlineOpenInNew {
-  margin: 6px 12px 12px 6px;
-} */
 .hover:hover {
   background-color: yellow;
 }
@@ -54,11 +48,10 @@
   background-color: #dc3545;
 }
 
-/*This is modifying the btn-primary colors but you could create your own .btn-something class as well*/
 .btn-secondary {
   color: #fff;
   background-color: #6c757d;
-  border-color: #6c757d; /*set the color you want here*/
+  border-color: #6c757d;
 }
 .btn-secondary:hover,
 .btn-secondary:focus,
@@ -68,9 +61,4 @@
   color: #fff;
   background-color: #6c757d;
   border-color: #6c757d;
-  /*set the color you want here*/
 }
-
-/* .form-control {
-  width: 200% !important;
-} */
