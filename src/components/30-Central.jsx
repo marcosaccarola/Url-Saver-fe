@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import './000.css'
-import Login from './305-Login'
-import BoxGroups from './310-BoxGroups'
-import BoxUrls from './320-BoxUrls'
+import Login from './31-Login'
+import BoxGroups from './32-BoxGroups'
+import BoxUrls from './33-BoxUrls'
 
 const Central=({user,setUser})=>{
     const[selectedGroup,setSelectedGroup]=useState()

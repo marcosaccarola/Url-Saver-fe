@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 import { login } from '../utilities/fetches'
 import './000.css'
-import Bar from './100-Bar'
-import ControlsAbove from './200-ControlsAbove'
-import Central from './300-Central'
-import ControlsBelow from './400-ControlsBelow'
+import Bar from './10-Bar'
+import ControlsAbove from './20-ControlsAbove'
+import Central from './30-Central'
+import ControlsBelow from './40-ControlsBelow'
 
 const Home=()=>{
     const[user,setUser]=useState()

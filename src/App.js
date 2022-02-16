@@ -2,7 +2,7 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './components/000.css'
-import Home from './components/000-Home';
+import Home from './components/00-Home'
 
 function App() {
   return (
